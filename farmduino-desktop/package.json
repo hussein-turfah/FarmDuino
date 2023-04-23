@@ -1,0 +1,72 @@
+{
+  "name": "farmduino-desktop",
+  "version": "1.0.0",
+  "description": "A desktop app that helps greenhouse owners monitor and control their growing environment even when they are not on-site. With this app, users can easily monitor the temperature, humidity, light intensity, and soil moisture levels in their greenhouse in real-time. They can also receive alerts when any of these levels fall outside of acceptable ranges, and remotely control devices like fans, heaters, lights and water pumps.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hussein-Turfah/FarmDuino.git"
+  },
+  "keywords": [
+    "Arduino",
+    "Farm",
+    "Smart",
+    "Smart",
+    "Greenhouse",
+    "Smart",
+    "Agriculture",
+    "Technology",
+    "in",
+    "Agriculture",
+    "Smart",
+    "Greenhouse",
+    "Greenhouse",
+    "Management",
+    "Greenhouse",
+    "Control",
+    "Technology",
+    "IOT",
+    "Internet",
+    "of",
+    "Things",
+    "Farm",
+    "automation",
+    "Sensor",
+    "monitoring",
+    "Arduino",
+    "Programming",
+    "Remote",
+    "access",
+    "Web",
+    "development",
+    "Data",
+    "visualization",
+    "smart",
+    "farming",
+    "sustainable",
+    "agriculture",
+    "control",
+    "systems",
+    "real-time",
+    "monitoring",
+    "Environmental",
+    "control",
+    "Agriculture",
+    "technology",
+    "Farming",
+    "automation."
+  ],
+  "author": "Hussein T. Turfah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hussein-Turfah/FarmDuino/issues"
+  },
+  "homepage": "https://github.com/Hussein-Turfah/FarmDuino#readme",
+  "devDependencies": {
+    "electron": "^24.1.2"
+  }
+}
