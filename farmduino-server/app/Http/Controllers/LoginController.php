@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use PHPOpenSourceSaver\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -30,7 +30,7 @@ class LoginController extends Controller
 
             // if the password is correct, return the user and the jwt token
             if($hashed_password == $hashed_salt_password){
-                $jwt_token = JWTAuth::fromUser($user);
+                $jwt_token = Auth::fromUser($user);
 
                 return response() -> json([
                     "user" => $user,
