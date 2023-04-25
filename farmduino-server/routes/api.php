@@ -21,4 +21,6 @@ Route::group(["prefix" => "v1.0.0"], function () {
 
     Route::post('/register', [RegisterController::class, "register"]);
     Route::post('/login', [LoginController::class, "login"]);
-    Route::post('/new-password', [NewPasswordController::class, "newPassword"]);});
+    Route::post('/check-color', [NewPasswordController::class, "checkColor"]);
+    Route::post('/new-password', [NewPasswordController::class, "newPassword"]);
+});
