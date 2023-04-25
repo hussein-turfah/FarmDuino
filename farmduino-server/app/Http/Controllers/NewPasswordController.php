@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class NewPasswordController extends Controller
 {
-    // this function is for changing the password when the user forgets it
+    // this function is for changing the password
     function newPassword(Request $request){
         //calling the functions controller    
         $functions_controller = new FunctionsController();
@@ -19,14 +19,12 @@ class NewPasswordController extends Controller
         $hashed_password = hash('sha256',$new_password.$salt);
 
         $user = Auth::user();
-        $id = $user->id;
-        $user = User::find($id);
-        $user ->salt = $salt;
         $user -> password = $hashed_password;
+        $user ->salt = $salt;
         $user->save();
-        
-        return response() -> json([
-            "success"=>true
+
+        return response()->json([
+            "message" => "Password changed successfully"
         ], 200);
     }
 }
