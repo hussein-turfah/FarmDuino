@@ -32,6 +32,7 @@ Route::group(["prefix" => "v1.0.0"], function () {
         Route::post('/change-password', [NewPasswordController::class, "newPassword"]);
     });
     Route::group(['middleware' => 'admin.role', 'prefix' => 'admin'], function () {
+        Route::get('/users', [AdminController::class, "listUsers"]);
     });
     
 });
