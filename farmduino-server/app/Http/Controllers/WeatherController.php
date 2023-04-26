@@ -17,6 +17,8 @@ class WeatherController extends Controller
         $return_details = array();
         $return_details['icon'] = $response->list[0]->weather[0]->icon;
         $return_details['description'] = $response->list[0]->weather[0]->description;
+        $return_details['temperature'] = $response->list[0]->main->temp;
+        $return_details['date'] = date('l d M', strtotime($response->list[0]->dt_txt));
         return $return_details;
     }
 }
