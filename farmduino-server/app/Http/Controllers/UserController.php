@@ -26,6 +26,11 @@ class UserController extends Controller
             $checked_new_email = User::where('email', $new_email)->count();
             if ($checked_new_email) {
                 return response()->json(["error"=> "Email already in use"], 401);
+            }else {
+                //update the email
+                $user->email = $request->email;
+                $user->save();
+                return response()->json(["message"=> "Email changed successfully"], 200);
             }
         }
     }
