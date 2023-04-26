@@ -25,6 +25,7 @@ Route::group(["prefix" => "v1.0.0"], function () {
 
     Route::controller(AuthController::class)->group(function () {
         Route::post('/logout', 'logout');
+        Route::post('/refresh', 'refresh');
     });
     
     Route::post('/check-color', [NewPasswordController::class, "checkColor"]);
