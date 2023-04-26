@@ -22,6 +22,8 @@ class UserController extends Controller
         //select the old email from the database and check if the hashed password is correct
         $user_db = User::where('email', $old_email)->first();
         if ($user_db && hash('sha256',$password.$user_db->salt) == $user_db->password) {
+            //check if the new email is already in use
+            $checked_new_email = User::where('email', $new_email)->count();
         }
     }
     
