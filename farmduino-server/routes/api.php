@@ -6,6 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewPasswordController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::group(["prefix" => "v1.0.0"], function () {
     Route::controller(AuthController::class)->group(function () {
         Route::post('/logout', 'logout');
         Route::post('/refresh', 'refresh');
+        Route::post('/change-email', [UserController::class, "changeEmail"]);
     });
     
     Route::post('/check-color', [NewPasswordController::class, "checkColor"]);
