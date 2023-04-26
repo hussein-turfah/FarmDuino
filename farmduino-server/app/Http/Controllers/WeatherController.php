@@ -15,5 +15,8 @@ class WeatherController extends Controller
         $response = file_get_contents($url);
         $response = json_decode($response);
         $return_details = array();
+        $return_details['icon'] = $response->list[0]->weather[0]->icon;
+        $return_details['description'] = $response->list[0]->weather[0]->description;
+        return $return_details;
     }
 }
