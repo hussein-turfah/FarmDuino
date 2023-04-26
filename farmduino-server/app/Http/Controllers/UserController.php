@@ -24,6 +24,9 @@ class UserController extends Controller
         if ($user_db && hash('sha256',$password.$user_db->salt) == $user_db->password) {
             //check if the new email is already in use
             $checked_new_email = User::where('email', $new_email)->count();
+            if ($checked_new_email) {
+                return response()->json(["error"=> "Email already in use"], 401);
+            }
         }
     }
     
