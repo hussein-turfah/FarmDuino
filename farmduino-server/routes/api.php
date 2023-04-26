@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewPasswordController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WeatherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,15 +25,15 @@ Route::group(["prefix" => "v1.0.0"], function () {
     Route::post('/register', [RegisterController::class, "register"]);
     Route::post('/login', [LoginController::class, "login"]);
     Route::post('/check-color', [NewPasswordController::class, "checkColor"]);
-
+    
     Route::controller(AuthController::class)->group(function () {
         Route::post('/logout', 'logout');
         Route::post('/refresh', 'refresh');
         Route::post('/change-email', [UserController::class, "changeEmail"]);
         Route::post('/change-password', [NewPasswordController::class, "newPassword"]);
+        Route::get('/weather', [WeatherController::class, "getWeather"]);
     });
     Route::group(['middleware' => 'admin.role', 'prefix' => 'admin'], function () {
         Route::get('/users', [AdminController::class, "listUsers"]);
     });
-    
 });
