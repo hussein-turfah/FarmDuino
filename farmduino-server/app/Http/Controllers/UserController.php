@@ -32,7 +32,7 @@ class UserController extends Controller
                 $user->save();
                 return response()->json(["message"=> "Email changed successfully"], 200);
             }
-        }
+        }return response()->json(["error"=> "Wrong Password"], 401);
     }
     
 }
