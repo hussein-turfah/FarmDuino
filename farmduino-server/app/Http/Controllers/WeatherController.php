@@ -13,6 +13,7 @@ class WeatherController extends Controller
         $latitude = getenv('LATITUDE');
         $url = "https://api.openweathermap.org/data/2.5/forecast?lat=".$latitude."&lon=".$longitude."&appid=".$api_key."&units=metric";
         $response = file_get_contents($url);
-        return $response;
+        $response = json_decode($response);
+        $return_details = array();
     }
 }
