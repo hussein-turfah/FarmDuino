@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
@@ -30,6 +30,8 @@ Route::group(["prefix" => "v1.0.0"], function () {
         Route::post('/refresh', 'refresh');
         Route::post('/change-email', [UserController::class, "changeEmail"]);
         Route::post('/change-password', [NewPasswordController::class, "newPassword"]);
+    });
+    Route::group(['middleware' => 'admin.role', 'prefix' => 'admin'], function () {
     });
     
 });
