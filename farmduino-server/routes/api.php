@@ -23,6 +23,7 @@ Route::group(["prefix" => "v1.0.0"], function () {
 
     Route::post('/register', [RegisterController::class, "register"]);
     Route::post('/login', [LoginController::class, "login"]);
+    Route::post('/check-color', [NewPasswordController::class, "checkColor"]);
 
     Route::controller(AuthController::class)->group(function () {
         Route::post('/logout', 'logout');
@@ -31,5 +32,4 @@ Route::group(["prefix" => "v1.0.0"], function () {
         Route::post('/change-password', [NewPasswordController::class, "newPassword"]);
     });
     
-    Route::post('/check-color', [NewPasswordController::class, "checkColor"]);
 });
