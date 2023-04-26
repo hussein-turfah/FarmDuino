@@ -25,8 +25,7 @@ class LoginController extends Controller
 
             $salt = $user->salt;
             $hashed_password = $user->password;
-            $salt_password = $password.$salt;
-            $hashed_salt_password = hash('sha256',$salt_password);
+            $hashed_salt_password = hash('sha256',$password.$salt);
 
             // if the password is correct, return the user and the jwt token
             if($hashed_password == $hashed_salt_password){
