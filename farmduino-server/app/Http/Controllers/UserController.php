@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,6 +18,11 @@ class UserController extends Controller
         //take the old email from jwt
         $user = Auth::user();
         $old_email = $user->email;
+
+        //select the old email from the database and check if the hashed password is correct
+        $user_db = User::where('email', $old_email)->first();
+        if ($user_db && hash('sha256',$password.$user_db->salt) == $user_db->password) {
+        }
     }
     
 }
