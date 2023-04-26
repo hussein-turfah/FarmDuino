@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewPasswordController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,11 @@ Route::group(["prefix" => "v1.0.0"], function () {
 
     Route::post('/register', [RegisterController::class, "register"]);
     Route::post('/login', [LoginController::class, "login"]);
+
+    Route::controller(AuthController::class)->group(function () {
+        
+    });
+    
     Route::post('/check-color', [NewPasswordController::class, "checkColor"]);
     Route::post('/new-password', [NewPasswordController::class, "newPassword"]);
 });
