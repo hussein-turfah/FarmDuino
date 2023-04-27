@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ticker_Element;
 use Illuminate\Http\Request;
 
 class TickerController extends Controller
 {
-    //add to ticker_elements table
     public function addTickerElement(Request $request){
+        $ticker_elements = Ticker_Element::where('product_name', $request->product_name)->first();
     }
 }
