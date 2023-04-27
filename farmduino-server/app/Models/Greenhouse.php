@@ -33,4 +33,7 @@ class Greenhouses extends Model
     public function sensorsUserID(){
         return $this->hasMany(Sensor::class,'greenhouses_users_id');
     }
+    public function actuators(){
+        return $this->hasMany(Actuator::class,'greenhouses_id');
+    }
 }
