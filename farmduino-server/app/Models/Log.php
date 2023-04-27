@@ -21,5 +21,8 @@ class Log extends Model
     public function greenhouse(){
         return $this->belongsTo(Greenhouse::class, 'greenhouses_id');
     }
+    public function greenhouseUserID(){
+        return $this->belongsTo(Greenhouse::class, 'greenhouses_users_id');
+    }
 
 }
