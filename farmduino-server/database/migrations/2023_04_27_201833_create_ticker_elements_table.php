@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('ticker_elements', function (Blueprint $table) {
             $table->id();
+            $table->string("product_name",45)->unique();
+            $table->string("price",45);
             $table->timestamps();
         });
     }
