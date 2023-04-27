@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('message', 200);
             $table->unsignedBigInteger('greenhouses_id');
             $table->unsignedBigInteger('greenhouses_users_id');
-            $table->foreign('greenhouses_id')->references('id')->on("greenhouses");
-            $table->foreign('greenhouses_users_id')->references('users_id')->on("greenhouses");
+            $table->foreign('greenhouses_id')->references('id')->on("greenhouses")->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('greenhouses_users_id')->references('users_id')->on("greenhouses")->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
