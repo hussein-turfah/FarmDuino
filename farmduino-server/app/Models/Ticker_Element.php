@@ -12,4 +12,8 @@ class Ticker_Element extends Model
         'product_name',
         'price',
     ];
+    public static $rules = [
+        'product_name' => ['required', 'string', 'max:45','unique:ticker_elements'],
+        'price' => ['required', 'string', 'max:45'],
+    ];
 }
