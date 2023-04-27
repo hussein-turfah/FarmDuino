@@ -18,5 +18,8 @@ class Log extends Model
         'component',
         'message',
     ];
+    public function greenhouse(){
+        return $this->belongsTo(Greenhouse::class, 'greenhouses_id');
+    }
 
 }
