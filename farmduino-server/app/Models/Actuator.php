@@ -12,4 +12,8 @@ class Actuator extends Model
         'name',
         'status',
      ];
+    public static $rules = [
+        'name' => ['required', 'string', 'max:45'],
+        'status' => ['required', 'string', 'max:45'],
+    ];
 }
