@@ -15,6 +15,11 @@ class TickerController extends Controller
             $ticker_elements->price = $request->price;
             $ticker_elements->save();
             return response()->json($ticker_elements, 200);
+        }else{
+            // change the price of the ticker element
+            $ticker_elements->price = $request->price; 
+            $ticker_elements->save();
+            return response()->json($ticker_elements, 200);
         }
     }
 }
