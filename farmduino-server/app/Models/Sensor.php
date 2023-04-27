@@ -12,4 +12,8 @@ class Sensor extends Model
         'name',
         'value',
      ];
+    public static $rules = [
+        'name' => ['required', 'string', 'max:45'],
+        'value' => ['required', 'string', 'max:45'],
+    ];
 }
