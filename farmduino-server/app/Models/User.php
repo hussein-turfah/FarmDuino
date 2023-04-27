@@ -61,4 +61,8 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+    public function greenhouses(){
+        return $this->hasMany(Greenhouse::class, 'users_id');
+    }
+
 }
