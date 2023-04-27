@@ -24,4 +24,7 @@ class Greenhouses extends Model
     public function logs(){
         return $this->hasMany(Log::class,'greenhouses_id');
     }
+    public function logsUserID(){
+        return $this->hasMany(Log::class,'greenhouses_users_id');
+    }
 }
