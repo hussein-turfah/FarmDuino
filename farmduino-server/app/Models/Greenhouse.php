@@ -36,4 +36,7 @@ class Greenhouses extends Model
     public function actuators(){
         return $this->hasMany(Actuator::class,'greenhouses_id');
     }
+    public function actuatorsUserID(){
+        return $this->hasMany(Actuator::class,'greenhouses_users_id');
+    }
 }
