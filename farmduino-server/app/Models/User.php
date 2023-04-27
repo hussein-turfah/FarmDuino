@@ -26,6 +26,17 @@ class User extends Authenticatable implements JWTSubject
         'favorite_color',
         'plant_name',
     ];
+    public static $rules = [
+        'first_name' => ['required', 'string', 'max:45'],
+        'last_name' => ['required', 'string', 'max:45'],
+        'email' => ['required', 'string', 'email', 'max:45', 'unique:users'],
+        'password' => ['required', 'string', 'min:8'],
+        'salt' => ['required', 'string', 'max:45'],
+        'gender'=>[ 'required', 'string', 'max:10'],
+        'dob'=>[ 'required', 'date'],
+        'favorite_color'=>[ 'required', 'string', 'max:45'],
+        'plant_name'=>[ 'required', 'string', 'max:45'],
+    ];
 
     /**
      * The attributes that should be hidden for serialization.
