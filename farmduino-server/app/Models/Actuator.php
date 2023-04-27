@@ -16,4 +16,7 @@ class Actuator extends Model
         'name' => ['required', 'string', 'max:45'],
         'status' => ['required', 'string', 'max:45'],
     ];
+    public function greenhouse(){
+        return $this->belongsTo(Greenhouse::class, 'greenhouses_id');
+    }
 }
