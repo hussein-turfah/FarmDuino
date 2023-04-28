@@ -15,13 +15,14 @@ class PlantController extends Controller
         $genus = $genus_species[0];
         $species = $genus_species[1];
         
-        //Initialize new curl session, then set options
+        //Initialize new curl session, then set options, then excute it, and then close the session
         $curl = curl_init();
         curl_setopt_array($curl, [
             CURLOPT_URL => "https://trefle.io/api/v1/plants/search?token=$trefle_api&q=$genus&q=$species",
             CURLOPT_RETURNTRANSFER => true,
         ]);
-        
+        $response = curl_exec($curl);
+        curl_close($curl);
     }
 
 }
