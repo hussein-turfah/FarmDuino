@@ -8,8 +8,13 @@ use Orhanerday\OpenAi\OpenAi;
 class AIController extends Controller
 {
     public function askAI(){
+        // get plant name from users table
+        $user = auth()->user();
+        $plant_name = $user->plant_name;
+
         $open_ai_key = getenv('OPENAI_API_KEY');
         $open_ai = new OpenAi($open_ai_key);
+        // Get Chat
         $chat = $open_ai->chat([
             'model' => 'gpt-3.5-turbo',
             'messages' => [
@@ -17,7 +22,7 @@ class AIController extends Controller
                     "role" => "system",
                     "content" => "You are an agricultural engineer, 
                     what are the temperature, humidity, light intensity 
-                    and soil moisture levels needed for a banana plant to 
+                    and soil moisture levels needed for a $plant_name plant to 
                     grow inside a greenhouse? please be specific.
                     sample output:
                     {'ideal_conditions':{'temperature': xx-yy °C, 'humidity': xx-yy %, 
@@ -36,10 +41,5 @@ class AIController extends Controller
         $decoded_chat_content = json_decode($decoded_chat->choices[0]->message->content);
         // Get Content
         return $decoded_chat_content;
-    }    
-    public function getPlantNameFromUsersTable(){
-        $user = auth()->user();
-        $plant_name = $user->plant_name;
-        return $plant_name;
-    }
+    }   
 }
