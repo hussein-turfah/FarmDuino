@@ -35,7 +35,6 @@ class AIController extends Controller
         $decoded_chat = json_decode($chat);
         $decoded_chat_content = json_decode($decoded_chat->choices[0]->message->content);
         // Get Content
-        // return response()->json($decoded_chat);
-        return response()->json($decoded_chat_content);
+        return $decoded_chat_content;
     }    
 }
