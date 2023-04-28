@@ -31,5 +31,10 @@ class PlantController extends Controller
     #function to get the plant Genus and species from GPT-3 model output, and then return the plant image
     public function getPlantGenusSpecies(){
         $AI_Controller = new AIController(); 
+        $query= $AI_Controller->askAI();
+        // we use -> to access objects, and we use {''} to access 
+        //property names that have spaces in them or special characters
+        $genus_species = $query-> most_used_genus_species ->{'Genus species'}; 
+        echo $genus_species;
     }
 }
