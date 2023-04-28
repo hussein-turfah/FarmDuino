@@ -8,5 +8,6 @@ use Orhanerday\OpenAi\OpenAi;
 class AIController extends Controller
 {
     public function askAI(){
+        $open_ai_key = getenv('OPENAI_API_KEY');
     }    
 }
