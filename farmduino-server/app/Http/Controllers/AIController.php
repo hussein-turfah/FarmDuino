@@ -37,4 +37,7 @@ class AIController extends Controller
         // Get Content
         return $decoded_chat_content;
     }    
+    public function getPlantNameFromUsersTable(){
+        
+    }
 }
