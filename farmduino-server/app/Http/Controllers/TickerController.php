@@ -25,5 +25,7 @@ class TickerController extends Controller
     }
     #list all ticker elements
     public function getTickerElements(){
+        $ticker_elements = Ticker_Element::all();
+        return response()->json($ticker_elements, 200);
     }
 }
