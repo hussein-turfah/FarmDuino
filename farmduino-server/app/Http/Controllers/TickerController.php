@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class TickerController extends Controller
 {
+    #add ticker element
     public function addTickerElement(Request $request){
         $ticker_elements = Ticker_Element::where('product_name', $request->product_name)->first();
         if(!$ticker_elements){
@@ -21,5 +22,8 @@ class TickerController extends Controller
             $ticker_elements->save();
             return response()->json($ticker_elements, 200);
         }
+    }
+    #list all ticker elements
+    public function getTickerElements(){
     }
 }
