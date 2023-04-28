@@ -8,5 +8,6 @@ class PlantController extends Controller
 {
     #function to get the plant image from trefle api using Genus and species supplied by the AI
     public function getPlantImage(){
+        $trefle_api = getenv('TREFLE_API_KEY');
     }
 }
