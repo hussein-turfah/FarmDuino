@@ -20,7 +20,7 @@ class AIController extends Controller
                     and soil moisture levels needed for a banana plant to 
                     grow inside a greenhouse? please be specific.
                     sample output:
-                    {{'temperature': xx-yy °C, 'humidity': xx-yy %, 
+                    {'ideal_conditions':{'temperature': xx-yy °C, 'humidity': xx-yy %, 
                     'light intensity': xx-yy lux, 'soil moisture': xx-yy%.},
                     {'Genus species': 'Genus species'}}
                     please be straight to the point. and return json format.
