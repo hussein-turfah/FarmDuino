@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
@@ -6,6 +6,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewPasswordController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PlantController;
+use App\Http\Controllers\TickerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WeatherController;
 
@@ -35,5 +37,6 @@ Route::group(["prefix" => "v1.0.0"], function () {
     });
     Route::group(['middleware' => 'admin.role', 'prefix' => 'admin'], function () {
         Route::get('/users', [AdminController::class, "listUsers"]);
+        Route::post('/add-ticker-element', [TickerController::class, "addTickerElement"]);
     });
 });
