@@ -27,5 +27,9 @@ class PlantController extends Controller
         $image_url = $response['data'][0]['image_url'];
         return response()->json(['image_url' => $image_url], 200);
     }
+    
+    #function to get the plant Genus and species from GPT-3 model output, and then return the plant image
+    public function getPlantGenusSpecies(){
 
+    }
 }
