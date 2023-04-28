@@ -6,6 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewPasswordController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LogController;
 use App\Http\Controllers\PlantController;
 use App\Http\Controllers\TickerController;
 use App\Http\Controllers\UserController;
@@ -35,6 +36,7 @@ Route::group(["prefix" => "v1.0.0"], function () {
         Route::post('/change-password', [NewPasswordController::class, "newPassword"]);
         Route::get('/weather', [WeatherController::class, "getWeather"]);
         Route::get('/ticker-elements', [TickerController::class, "getTickerElements"]);
+        Route::get('/logs', [LogController::class, "listLogs"]);
     });
     Route::group(['middleware' => 'admin.role', 'prefix' => 'admin'], function () {
         Route::get('/users', [AdminController::class, "listUsers"]);
