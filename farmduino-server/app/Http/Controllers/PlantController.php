@@ -30,6 +30,6 @@ class PlantController extends Controller
     
     #function to get the plant Genus and species from GPT-3 model output, and then return the plant image
     public function getPlantGenusSpecies(){
-
+        $AI_Controller = new AIController(); 
     }
 }
