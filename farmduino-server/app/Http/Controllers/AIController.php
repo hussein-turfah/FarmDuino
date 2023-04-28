@@ -30,15 +30,10 @@ class AIController extends Controller
             'frequency_penalty' => 0,
             'presence_penalty' => 0,
          ]);
-         
-         
-         var_dump($chat);
-         echo "<br>";
-         echo "<br>";
-         echo "<br>";
-         // decode response
-         $d = json_decode($chat);
-         // Get Content
-         echo($d->choices[0]->message->content);
+         $decoded_chat = json_decode($chat);
+        $decoded_chat_content = json_decode($decoded_chat->choices[0]->message->content);
+        // Get Content
+        // return response()->json($decoded_chat);
+        return response()->json($decoded_chat_content);
     }    
 }
