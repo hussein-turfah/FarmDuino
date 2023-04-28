@@ -25,8 +25,8 @@ class AIController extends Controller
                     please be straight to the point. and return json format." 
                 ],
             ],
-            'temperature' => 1.0,
-            'max_tokens' => 4000,
+            'temperature' =>0.1,
+            'max_tokens' => 500,
             'frequency_penalty' => 0,
             'presence_penalty' => 0,
          ]);
