@@ -38,6 +38,8 @@ class AIController extends Controller
         return $decoded_chat_content;
     }    
     public function getPlantNameFromUsersTable(){
-        
+        $user = auth()->user();
+        $plant_name = $user->plant_name;
+        return $plant_name;
     }
 }
