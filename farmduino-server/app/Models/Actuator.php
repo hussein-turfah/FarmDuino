@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Actuator extends Model
 {
@@ -16,10 +17,10 @@ class Actuator extends Model
         'name' => ['required', 'string', 'max:45'],
         'status' => ['required', 'string', 'max:45'],
     ];
-    public function greenhouse(){
-        return $this->belongsTo(Greenhouse::class, 'greenhouses_id');
+    public function greenhouse(): HasMany{
+        return $this->hasMany(Greenhouse::class, 'greenhouses_id');
     }
-    public function greenhouseUserID(){
-        return $this->belongsTo(Greenhouse::class, 'greenhouses_users_id');
+    public function greenhouseUserID(): HasMany{
+        return $this->hasMany(Greenhouse::class, 'greenhouses_users_id');
     }
 }

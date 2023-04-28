@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Greenhouses extends Model
 {
@@ -18,25 +20,25 @@ class Greenhouses extends Model
         'name',
         'users_id',
     ];
-    public function user(){
-        return $this->belongsTo(User::class, 'users_id');
+    public function user() :HasMany{
+        return $this->hasMany(User::class, 'users_id');
     }
-    public function logs(){
-        return $this->hasMany(Log::class,'greenhouses_id');
+    public function logs():BelongsTo{
+        return $this->belongsTo(Log::class,'greenhouses_id');
     }
-    public function logsUserID(){
-        return $this->hasMany(Log::class,'greenhouses_users_id');
+    public function logsUserID():BelongsTo{
+        return $this->belongsTo(Log::class,'greenhouses_users_id');
     }
-    public function sensors(){
-        return $this->hasMany(Sensor::class,'greenhouses_id');
+    public function sensors():BelongsTo{
+        return $this->belongsTo(Sensor::class,'greenhouses_id');
     }
-    public function sensorsUserID(){
-        return $this->hasMany(Sensor::class,'greenhouses_users_id');
+    public function sensorsUserID():BelongsTo{
+        return $this->belongsTo(Sensor::class,'greenhouses_users_id');
     }
-    public function actuators(){
-        return $this->hasMany(Actuator::class,'greenhouses_id');
+    public function actuators():BelongsTo{
+        return $this->belongsTo(Actuator::class,'greenhouses_id');
     }
-    public function actuatorsUserID(){
-        return $this->hasMany(Actuator::class,'greenhouses_users_id');
+    public function actuatorsUserID():BelongsTo{
+        return $this->belongsTo(Actuator::class,'greenhouses_users_id');
     }
 }
