@@ -34,6 +34,7 @@ Route::group(["prefix" => "v1.0.0"], function () {
         Route::post('/change-email', [UserController::class, "changeEmail"]);
         Route::post('/change-password', [NewPasswordController::class, "newPassword"]);
         Route::get('/weather', [WeatherController::class, "getWeather"]);
+        Route::get('/ticker-elements', [TickerController::class, "getTickerElements"]);
     });
     Route::group(['middleware' => 'admin.role', 'prefix' => 'admin'], function () {
         Route::get('/users', [AdminController::class, "listUsers"]);
