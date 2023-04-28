@@ -23,6 +23,9 @@ class PlantController extends Controller
         ]);
         $response = curl_exec($curl);
         curl_close($curl);
+        $response = json_decode($response, true); //set to true becuase we want to return an array instead of an object
+        $image_url = $response['data'][0]['image_url'];
+        return response()->json(['image_url' => $image_url], 200);
     }
 
 }
