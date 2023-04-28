@@ -15,19 +15,14 @@ class AIController extends Controller
             'messages' => [
                 [
                     "role" => "system",
-                    "content" => "You are a helpful assistant."
-                ],
-                [
-                    "role" => "user",
-                    "content" => "Who won the world series in 2020?"
-                ],
-                [
-                    "role" => "assistant",
-                    "content" => "The Los Angeles Dodgers won the World Series in 2020."
-                ],
-                [
-                    "role" => "user",
-                    "content" => "Where was it played?"
+                    "content" => "You are an agricultural engineer, 
+                    what are the temperature, humidity, light intensity 
+                    and soil moisture levels needed for a banana plant to 
+                    grow inside a greenhouse? please be specific.
+                    sample output:
+                    temperature: xx-yy °C, humidity: xx-yy %, 
+                    light intensity: xx-yy lux, soil moisture: xx-yy%. 
+                    please be straight to the point. and return json format." 
                 ],
             ],
             'temperature' => 1.0,
