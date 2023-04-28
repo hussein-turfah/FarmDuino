@@ -7,6 +7,10 @@ use Orhanerday\OpenAi\OpenAi;
 
 class AIController extends Controller
 {
+    #This function (askAI())is used to ask the GPT-3 model about the plant recommended growth conditions, the function gets the plant name from the users table, and then 
+    #sends it to the GPT-3 model, then the response returned carries an object of two objects, those objects, one of them is the recommended growth conditions 
+    #this one goes directly to the front_end, and the other object is the Genus and species of the plant, this one goes to the getPlantImage function to get the image 
+    #of the plant, which then goes to the front_end.  
     public function askAI(){
         // get plant name from users table
         $user = auth()->user();
@@ -42,4 +46,5 @@ class AIController extends Controller
         // Get Content
         return $decoded_chat_content;
     }   
+
 }
