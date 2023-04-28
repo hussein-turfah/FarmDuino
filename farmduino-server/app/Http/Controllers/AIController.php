@@ -22,15 +22,16 @@ class AIController extends Controller
                     sample output:
                     temperature: xx-yy °C, humidity: xx-yy %, 
                     light intensity: xx-yy lux, soil moisture: xx-yy%. 
-                    please be straight to the point. and return json format." 
+                    please be straight to the point. and return json format.
+                    send a separate json with the most used genus-species of the plant." 
                 ],
             ],
             'temperature' =>0.1,
             'max_tokens' => 500,
             'frequency_penalty' => 0,
             'presence_penalty' => 0,
-         ]);
-         $decoded_chat = json_decode($chat);
+        ]);
+        $decoded_chat = json_decode($chat);
         $decoded_chat_content = json_decode($decoded_chat->choices[0]->message->content);
         // Get Content
         // return response()->json($decoded_chat);
