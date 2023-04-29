@@ -4,6 +4,7 @@
   "description": "A desktop app that helps greenhouse owners monitor and control their growing environment even when they are not on-site. With this app, users can easily monitor the temperature, humidity, light intensity, and soil moisture levels in their greenhouse in real-time. They can also receive alerts when any of these levels fall outside of acceptable ranges, and remotely control devices like fans, heaters, lights and water pumps.",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^7.1.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
