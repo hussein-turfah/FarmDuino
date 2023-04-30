@@ -13,7 +13,7 @@ const Login = () => {
         <h1 className="h1">Login</h1>
         <div className="submain-container">
           <div className="textfield-container">
-          <TextField className="field" id="outlined-basic" label="Email" variant="outlined" type="email" required/>
+            <TextField className="field" id="outlined-basic" label="Email" variant="outlined" type="email" required/>
             <TextField className="field" id="outlined-basic" label="Password" variant="outlined" type="password" required/>
           </div>
             <Button variant="outlined">Login</Button>
