@@ -12,21 +12,24 @@ const Register = () => {
   
   return (
     <div className={styles.body}>
-      <img src={register_image} alt="Register" className="image" />
-      <div>
-        <h1 className='h1-register'>Register</h1>
-        <div>
-          <div>
-            <TextField id="outlined-basic" label="First Name" variant="outlined" required/>
-            <TextField id="outlined-basic" label="Last Name" variant="outlined" required/>
+      <div className={styles.image_container}>
+        <img src={register_image} alt="Register" className={styles.image} />
+      </div>
+      <div className={styles.main_container}>
+        <h1 className={styles.h1}>Register</h1>
+        <div className={styles.submain_container}>
+          {/* <div className={styles.input_}></div> */}
+          <div className={styles.name_fields}>
+            <TextField className={styles.field} id="outlined-basic" label="First Name" variant="outlined" required/>
+            <TextField className={styles.field} id="outlined-basic" label="Last Name" variant="outlined" required/>
           </div>
-            <TextField id="outlined-basic" label="Email" variant="outlined" type= "email" required/>
-            <TextField id="outlined-basic" label="Password" variant="outlined" type="password" required/>
+            <TextField className={styles.textfield_container} id="outlined-basic" label="Email" variant="outlined" type= "email" required/>
+            <TextField className={styles.textfield_container} id="outlined-basic" label="Password" variant="outlined" type="password" required/>
             <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={locale}>
-              <DatePicker label="Date" defaultValue={dayjs('2023-12-10')} />
+              <DatePicker className={styles.textfield_container} label="Date" defaultValue={dayjs('2023-12-10')} />
             </LocalizationProvider>
-            <TextField id="outlined-basic" label="Favorite Color" variant="outlined" required/>
-            <TextField id="outlined-basic" label="Plant Name" variant="outlined" required/>
+            <TextField className={styles.textfield_container} id="outlined-basic" label="Favorite Color" variant="outlined" required/>
+            <TextField className={styles.textfield_container} id="outlined-basic" label="Plant Name" variant="outlined" required/>
           <div>
             <Button variant="outlined">Register</Button>
           </div>
