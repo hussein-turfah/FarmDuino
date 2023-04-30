@@ -30,24 +30,3 @@ p{
   font-family: var(--main-font) !important;
 }
 
-/* ------------ */
-
-
-/* Login Page */
-.login-body{
-  display: flex;
-  align-items: center;
-}
-.image{
-  height: 100vh;
-  filter: blur(2px) brightness(0.6);
-}
-.login-main-container{
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 40%;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--purple);
-}
