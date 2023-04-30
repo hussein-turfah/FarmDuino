@@ -1,5 +1,4 @@
 import { TextField, Button, Link } from "@mui/material";
-import './login.css';
 
 const LoginImage = process.env.PUBLIC_URL + '/assets/images/login.jpg';
 
