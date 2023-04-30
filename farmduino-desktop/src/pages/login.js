@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { TextField, Button, Link } from "@mui/material";
 
 const Login = () => {
   return (
@@ -12,7 +12,11 @@ const Login = () => {
           <TextField id="outlined-basic" label="Password" variant="outlined" type="password" required/>
         </div>
         <div>
-          <Button variant="outlined">Register</Button>
+          <Button variant="outlined">Login</Button>
+        </div>
+        <div>
+          <Link href="/forgot-password">Forgot Password?</Link>
+          <Link href="/register">Don't have an account? Register</Link>
         </div>
       </div>
     </div>
