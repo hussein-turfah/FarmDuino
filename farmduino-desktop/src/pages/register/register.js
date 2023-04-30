@@ -3,12 +3,16 @@ import { TextField, Button } from '@mui/material/';
 import dayjs from 'dayjs';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers/';
+import styles from './register.module.css';
+
+const register_image = process.env.PUBLIC_URL + '/assets/images/register.jpg';
 
 const Register = () => {
   const locale = 'zh-cn';
   
   return (
-    <div>
+    <div className={styles.body}>
+      <img src={register_image} alt="Register" className="image" />
       <div>
         <h1 className='h1-register'>Register</h1>
         <div>
