@@ -1,7 +1,16 @@
+import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Button  from '@mui/material/Button';
+import dayjs from 'dayjs';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers';
+
 
 const Register = () => {
+  // const [locale, setLocale] = React.useState('zh-cn');
+  const locale = 'zh-cn';
+  
   return (
     <div>
       <h1>Register</h1>
@@ -17,7 +26,9 @@ const Register = () => {
           <TextField id="outlined-basic" label="Password" variant="outlined" type="password" required/>
         </div>
         <div>
-          <TextField id="outlined-basic" label="Date of Birth" variant="outlined" type="date" required/>
+          <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={locale}>
+            <DatePicker label="Date" defaultValue={dayjs('2023-12-10')} />
+          </LocalizationProvider>
         </div> 
         <div>
           <TextField id="outlined-basic" label="Favorite Color" variant="outlined" required/>
