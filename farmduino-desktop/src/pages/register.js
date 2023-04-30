@@ -16,8 +16,11 @@ const Register = () => {
           <TextField id="outlined-basic" label="Password" variant="outlined" type="password" />
         </div>
         <div>
-          <TextField id="outlined-basic" label="Date of Birth" variant="outlined" type="date"/>
-        </div>  
+          <TextField id="outlined-basic" label="Date of Birth" variant="outlined" type="date" />
+        </div> 
+        <div>
+          <TextField id="outlined-basic" label="Favorite Color" variant="outlined"/>
+        </div>
       </div>
     </div>
   );
