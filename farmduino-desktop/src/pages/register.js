@@ -1,4 +1,5 @@
 import TextField from '@mui/material/TextField';
+import Button  from '@mui/material/Button';
 
 const Register = () => {
   return (
@@ -24,6 +25,9 @@ const Register = () => {
         <div>
           <TextField id="outlined-basic" label="Plant Name" variant="outlined" required/>
         </div>
+      </div>
+      <div>
+        <Button variant="outlined">Register</Button>
       </div>
     </div>
   );
