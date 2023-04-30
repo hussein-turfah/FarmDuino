@@ -10,7 +10,7 @@
   justify-content: center;
   /* background-color: var(--purple); */
 }
-.image-container{
+.image_container{
   width: 80vw;
   height: 100vh;
 }
@@ -19,7 +19,7 @@
   height: 100%;
   filter: blur(2px) brightness(0.6);
 }
-.main-container{
+.main_container{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +29,7 @@
   /* background-color: var(--purple); */
   gap: 4%;
 }
-.submain-container{
+.submain_container{
   /* background-color: cyan; */
   width: 100%;
   display: flex;
@@ -38,7 +38,7 @@
   align-items: center;
   gap: 17px;
 }
-.textfield-container{
+.textfield_container{
   display: flex;
   flex-direction: column;
   width: 70%;
