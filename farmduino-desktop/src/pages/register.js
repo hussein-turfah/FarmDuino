@@ -21,6 +21,9 @@ const Register = () => {
         <div>
           <TextField id="outlined-basic" label="Favorite Color" variant="outlined"/>
         </div>
+        <div>
+          <TextField id="outlined-basic" label="Plant Name" variant="outlined"/>
+        </div>
       </div>
     </div>
   );
