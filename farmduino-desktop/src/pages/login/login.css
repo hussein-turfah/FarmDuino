@@ -1,0 +1,52 @@
+/* Login Page */
+
+.h1{
+  /* color: var(--white) !important; */
+}
+
+.body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: var(--purple); */
+}
+.image-container{
+  width: 80vw;
+  height: 100vh;
+}
+.image{
+  width: 100%;
+  height: 100%;
+  filter: blur(2px) brightness(0.6);
+}
+.main-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 25%;
+  background-filter: blur(2px) brightness(0.6);
+  /* background-color: var(--purple); */
+  gap: 4%;
+}
+.submain-container{
+  /* background-color: cyan; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+}
+.textfield-container{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 15px;
+ }
+.field{
+  width: 100% ;
+}
+
+/* ------------ */
