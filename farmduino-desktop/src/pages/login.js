@@ -1,8 +1,10 @@
 import { TextField, Button, Link } from "@mui/material";
+const LoginImage = process.env.PUBLIC_URL + '/assets/images/login.jpg';
 
 const Login = () => {
   return (
-    <div className="main-container">
+    <div className="main-login-container">
+      <img src={LoginImage} alt="Login" className="image" />
       <h2>Login</h2>
       <div className="submain-container">
         <div className="field-container">
