@@ -4,9 +4,11 @@ import Navbar from '../../components/user-navbar/navbar';
 
 const Dashboard = () => {
     return (
-        <div>
+        <div className={styles.body}>
             <Sidebar />
-            <Navbar />
+            <div className={styles.main_container}>
+                <Navbar />
+            </div>
         </div>
     )
 }
