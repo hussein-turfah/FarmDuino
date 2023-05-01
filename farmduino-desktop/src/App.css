@@ -24,6 +24,10 @@ h2{
   font-weight: 700 !important;
   font-family: var(--main-font) !important;
 }
+h3{
+   font-size: 1.25rem !important;
+  font-weight: 500 !important;
+}
 p{
   font-size: var(--body) !important;
   font-weight: 400 !important;
