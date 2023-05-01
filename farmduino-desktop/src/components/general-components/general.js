@@ -29,12 +29,17 @@ export const Container_title = (props) => {
 
 export const Mybox = (props) => {
   return(
-    <Box className={styles.Box}>
-        <div>
-          <img src={props.source}/>
-        </div>
-        <h3>{props.title}</h3>
-        <h1>{props.value}</h1>
+    <Box className={styles.mybox}>
+      <Mylogo source={props.image_source}/>  
+      <h2>{props.title}</h2>
+      <h3>{props.value}</h3>
     </Box>
+  )
+};
+export const Mylogo = (props) => {
+  return(
+    <div className={styles.mylogo}>
+      <img src={props.source} className={styles.mylogo_image} alt="Logo" />
+    </div>
   )
 };
