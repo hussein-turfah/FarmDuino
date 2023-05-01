@@ -22,7 +22,7 @@ export const Page_Content_Container = (props) => {
 export const Container_title = (props) => {
   return(
     <div className={styles.container_title}>
-      <h1>{props.title}</h1>
+      <h2>{props.title}</h2>
     </div>
   )
 };
@@ -40,6 +40,18 @@ export const Mylogo = (props) => {
   return(
     <div className={styles.mylogo}>
       <img src={props.source} className={styles.mylogo_image} alt="Logo" />
+    </div>
+  )
+};
+
+export const Myitem = (props) => {
+  return(
+    <div className={styles.myitem}>
+      <div className={styles.myitem_container}>
+        <Mylogo source={props.image_source}/>
+        <h3>{props.title}</h3>
+      </div>
+      <div>{props.value}</div>
     </div>
   )
 };
