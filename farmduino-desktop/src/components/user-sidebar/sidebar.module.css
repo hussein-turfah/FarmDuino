@@ -2,12 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.95% 0px;
-  width: 17.5%;
+  width: 17.5vw;
   height: 100vh;
   background-color: var(--purple);
 }
 .logo_container {
+  padding: 5% 0%;
   width: 90%;
 }
 .logo {
