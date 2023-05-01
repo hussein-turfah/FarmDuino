@@ -1,6 +1,6 @@
 import { Link } from "@mui/material";
 import styles from "./sidebar.module.css";
-const logo = process.env.PUBLIC_URL + "/assets/images/logo.png";
+const logo = process.env.PUBLIC_URL + "/assets/images/logo1.svg";
 const dashboard = process.env.PUBLIC_URL + "/assets/images/dashboard.png";
 const temperature = process.env.PUBLIC_URL + "/assets/images/temperature.png";
 const humidity = process.env.PUBLIC_URL + "/assets/images/humidity.png";
@@ -14,36 +14,36 @@ const Sidebar = () => {
         <img src={logo} alt="logo" className={styles.logo}/>
       </div>
       <div className={styles.buttons_container}>
-        <div className={styles.buttons}>
+        <Link href="/dashboard" className={styles.buttons}>
           <div className={styles.logos}>
-            <img src={dashboard} alt="logo" className={styles.dashboard_logo}/>
+            <img src={dashboard} alt="logo" className={styles.buttons_logo}/>
           </div>
-          <Link href="/dashboard" className={styles.links}>Dashboard</Link>
-        </div>
-        <div className={styles.buttons}>
+            <h3 className={styles.links}>Dashboard</h3>
+        </Link>
+        <Link href="/temperature" className={styles.buttons}>
           <div className={styles.logos}>
-            <img src={temperature} alt="logo" className={styles.dashboard_logo}/>
+            <img src={temperature} alt="logo" className={styles.buttons_logo}/>
           </div>
-          <Link href="/dashboard" className={styles.links}>Dashboard</Link>
-        </div>
-        <div className={styles.buttons}>
+            <h3 className={styles.links}>Temperature</h3>
+        </Link>
+        <Link href="/humidity" className={styles.buttons}>
           <div className={styles.logos}>
-            <img src={humidity} alt="logo" className={styles.dashboard_logo}/>
+            <img src={humidity} alt="logo" className={styles.buttons_logo}/>
           </div>
-          <Link href="/dashboard" className={styles.links}>Dashboard</Link>
-        </div>
-        <div className={styles.buttons}>
+            <h3 className={styles.links}>Humidity</h3>
+        </Link>
+        <Link href="/soil-moisture" className={styles.buttons}>
           <div className={styles.logos}>
-            <img src={soil_moisture} alt="logo" className={styles.dashboard_logo}/>
+            <img src={soil_moisture} alt="logo" className={styles.buttons_logo}/>
           </div>
-          <Link href="/dashboard" className={styles.links}>Dashboard</Link>
-        </div>
-        <div className={styles.buttons}>
+            <h3 className={styles.links}>Soil Moisture</h3>
+        </Link>
+        <Link href="/light-intensity" className={styles.buttons}>
           <div className={styles.logos}>
-            <img src={light_intensity} alt="logo" className={styles.dashboard_logo}/>
+            <img src={light_intensity} alt="logo" className={styles.buttons_logo}/>
           </div>
-          <Link href="/dashboard" className={styles.links}>Dashboard</Link>
-        </div>
+            <h3 className={styles.links}>Light Intensity</h3>
+        </Link>
       </div>
     </div>
   );
