@@ -7,6 +7,15 @@
   height: 100vh;
   background-color: var(--purple);
 }
+.logo_container {
+  width: 100%;
+}
 .logo {
   width: 100%;
+  height: 100%;
+}
+
+.links{
+  text-decoration: none !important;
+  color: red !important;
 }
