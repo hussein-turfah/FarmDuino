@@ -1,0 +1,10 @@
+.body{
+  background-color: var(--blue);
+  display: flex;
+  justify-content: end;
+  width: 82.5vw;
+}
+.main_container{
+  display: flex;
+  align-items: center;
+}
