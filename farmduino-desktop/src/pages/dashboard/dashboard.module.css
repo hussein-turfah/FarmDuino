@@ -1,0 +1,4 @@
+.body{
+  background-color: var(--page-background);
+  display: flex;
+}
