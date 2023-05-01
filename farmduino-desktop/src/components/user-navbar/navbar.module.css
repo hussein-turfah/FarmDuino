@@ -8,7 +8,7 @@
 .main_container{
   display: flex;
   align-items: center;
-  gap: 5%;
+  gap: 10%;
 }
 .text_container{
   display: flex;
