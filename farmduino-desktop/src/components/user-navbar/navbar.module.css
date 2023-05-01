@@ -3,7 +3,7 @@
   display: flex;
   justify-content: end;
   width: 82.5vw;
-  height: 7vh;
+  height: 5vh;
 }
 .main_container{
   display: flex;
@@ -20,6 +20,6 @@
   color: var(--white);
 }
 .logo{
-  width: 4vh;
-  height: 4vh;
+  width: 3vh;
+  height: 3vh;
 }
