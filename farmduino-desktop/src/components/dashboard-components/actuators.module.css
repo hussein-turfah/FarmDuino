@@ -1,0 +1,16 @@
+.actuator_settings{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* background-color: blue; */
+}
+.settings_container{
+  display: flex;
+  gap: 1vw;
+  flex-direction: column;
+  /* justify-content:center ; */
+  align-items: left;
+  width: 100%;
+}
