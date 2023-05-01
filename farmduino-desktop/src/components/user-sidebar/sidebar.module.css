@@ -1,0 +1,12 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0px;
+  width: 17.5%;
+  height: 100vh;
+  background-color: var(--purple);
+}
+.logo {
+  width: 100%;
+}
