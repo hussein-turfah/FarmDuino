@@ -1,6 +1,5 @@
 import { Badge, Link } from '@mui/material';
 import styles from './navbar.module.css';
-import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 const notifications = process.env.PUBLIC_URL + '/assets/icons/notifications.png';
 const profile = process.env.PUBLIC_URL + '/assets/icons/profile.png';
 
