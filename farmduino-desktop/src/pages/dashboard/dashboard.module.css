@@ -8,4 +8,25 @@
 .cards_container{
   display: flex;
   justify-content: space-evenly;
+  background-color: yellow;
+}
+.container2{
+  display: flex;
+  justify-content: space-between;
+  background-color: green;
+}
+.box1{
+  width: 50vw;
+  display: flex;
+  background-color: red;
+}
+.plant_details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 436px;
+  height: 337px;
 }
