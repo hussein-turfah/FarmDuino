@@ -2,3 +2,10 @@
   background-color: var(--page-background);
   display: flex;
 }
+.submain_container{
+  margin: 1% 2% 0 2%;
+}
+.cards_container{
+  display: flex;
+  justify-content: space-evenly;
+}
