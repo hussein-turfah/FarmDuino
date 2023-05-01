@@ -1,9 +1,10 @@
+import Sidebar from '../../components/user-sidebar/sidebar';
 import styles from './dashboard.module.css';
 
 const Dashboard = () => {
     return (
         <div>
-            <h1>Dashboard</h1>
+            <Sidebar className={styles.body}/>
         </div>
     )
 }
