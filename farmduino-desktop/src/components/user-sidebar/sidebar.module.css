@@ -34,6 +34,11 @@
   height: 30px;
   margin-right: 10px;
 }
+.buttons_logo{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
 
 .links{
   text-decoration: none !important;
