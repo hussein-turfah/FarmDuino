@@ -16,9 +16,12 @@ const Dashboard = () => {
           <Ticker />
           <div className={styles.submain_container}>
             <Page_Title title="Dashboard" subtitle="Greenhouse 1" />
-            <Page_Content_Container
-              children={<Mybox title="temperature" source={temperature} />}
-            />
+            <div className={styles.cards_container}>
+                <Page_Content_Container children={<Mybox title="Temperature" image_source={temperature} value="30 C"/>}/>
+                <Page_Content_Container children={<Mybox title="Temperature" image_source={temperature} value="30 C"/>}/>
+                <Page_Content_Container children={<Mybox title="Temperature" image_source={temperature} value="30 C"/>}/>
+                <Page_Content_Container children={<Mybox title="Temperature" image_source={temperature} value="30 C"/>}/>
+            </div>
           </div>
         </div>
       </div>
