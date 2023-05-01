@@ -14,24 +14,34 @@ const Sidebar = () => {
         <img src={logo} alt="logo" className={styles.logo}/>
       </div>
       <div className={styles.buttons_container}>
-        <div className="buttons">
-          <img src={dashboard} alt="logo" className={styles.dashboard_logo}/>
+        <div className={styles.buttons}>
+          <div className={styles.logos}>
+            <img src={dashboard} alt="logo" className={styles.dashboard_logo}/>
+          </div>
           <Link href="/dashboard" className={styles.links}>Dashboard</Link>
         </div>
-        <div className="buttons">
-        <img src={logo} alt="logo" className={styles.dashboard_logo}/>
+        <div className={styles.buttons}>
+          <div className={styles.logos}>
+            <img src={temperature} alt="logo" className={styles.dashboard_logo}/>
+          </div>
           <Link href="/dashboard" className={styles.links}>Dashboard</Link>
         </div>
-        <div className="buttons">
-        <img src={logo} alt="logo" className={styles.dashboard_logo}/>
+        <div className={styles.buttons}>
+          <div className={styles.logos}>
+            <img src={humidity} alt="logo" className={styles.dashboard_logo}/>
+          </div>
           <Link href="/dashboard" className={styles.links}>Dashboard</Link>
         </div>
-        <div className="buttons">
-        <img src={logo} alt="logo" className={styles.dashboard_logo}/>
+        <div className={styles.buttons}>
+          <div className={styles.logos}>
+            <img src={soil_moisture} alt="logo" className={styles.dashboard_logo}/>
+          </div>
           <Link href="/dashboard" className={styles.links}>Dashboard</Link>
         </div>
-        <div className="buttons">
-        <img src={logo} alt="logo" className={styles.dashboard_logo}/>
+        <div className={styles.buttons}>
+          <div className={styles.logos}>
+            <img src={light_intensity} alt="logo" className={styles.dashboard_logo}/>
+          </div>
           <Link href="/dashboard" className={styles.links}>Dashboard</Link>
         </div>
       </div>
