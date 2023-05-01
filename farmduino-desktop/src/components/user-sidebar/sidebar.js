@@ -1,11 +1,11 @@
 import { Link } from "@mui/material";
 import styles from "./sidebar.module.css";
 const logo = process.env.PUBLIC_URL + "/assets/images/logo1.svg";
-const dashboard = process.env.PUBLIC_URL + "/assets/images/dashboard.png";
-const temperature = process.env.PUBLIC_URL + "/assets/images/temperature.png";
-const humidity = process.env.PUBLIC_URL + "/assets/images/humidity.png";
-const soil_moisture = process.env.PUBLIC_URL + "/assets/images/soil_moisture.png";
-const light_intensity = process.env.PUBLIC_URL + "/assets/images/light_intensity.png";
+const dashboard = process.env.PUBLIC_URL + "/assets/icons/dashboard.png";
+const temperature = process.env.PUBLIC_URL + "/assets/icons/temperature.png";
+const humidity = process.env.PUBLIC_URL + "/assets/icons/humidity.png";
+const soil_moisture = process.env.PUBLIC_URL + "/assets/icons/soil_moisture.png";
+const light_intensity = process.env.PUBLIC_URL + "/assets/icons/light_intensity.png";
 
 const Sidebar = () => {
   return (
