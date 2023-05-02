@@ -4,7 +4,7 @@ import styles from "./plant.module.css";
 const plant_image = process.env.PUBLIC_URL + 'assets/images/banana.jpg';
 
 
-const Plant = (props) => {
+export const Plant = (props) => {
   return (
     <div className={styles.plant_details}>
       <Page_Content_Container
@@ -29,4 +29,23 @@ const Plant = (props) => {
     </div>
   );
 };
-export default Plant;
+
+export const Plant_row = (props) => {
+  return (
+    <div className={styles.plant_details_row}>
+      <div className={styles.plant_details_container_row}>
+        <Container_title title="Plant Details" />
+        <div>
+          <h3>&nbsp;&nbsp;Plant Species:</h3>
+          <h3>&nbsp;&nbsp;Temperature: </h3>
+          <h3>&nbsp;&nbsp;Humidity:</h3>
+          <h3>&nbsp;&nbsp;Soil Moisture:</h3>
+          <h3>&nbsp;&nbsp;Light Intensity:</h3>
+        </div>      
+      </div>
+      <div className={styles.plant_image_container_row}>
+        <img src={plant_image} className={styles.plant_image_row} />
+      </div>
+    </div>
+  );
+};
