@@ -17,10 +17,11 @@ const Actuators = (props) => {
           title="Temperature"
           image_source={temperature}
           value={
-            <Box sx={{ width: 300 }}>
+            <Box sx={{ width: 200 }}>
               <Slider
                 aria-label="Custom marks"
-                defaultValue={20} // getAriaValueText={valuetext} step={2} valueLabelDisplay="auto" // marks={marks}
+                defaultValue={20} //getAriaValueText={valuetext} 
+                step={2} valueLabelDisplay="auto" // marks={marks}
               />
             </Box>
           }
@@ -34,10 +35,13 @@ const Actuators = (props) => {
           title="Light Intensity"
           image_source={light}
           value={
-            <Box sx={{ width: 300 }}>
+            <Box sx={{ width: 200 }}>
               <Slider
                 aria-label="Small steps"
-                defaultValue={0.00000005} // getAriaValueText={valuetext} step={30} // marks min={0} max={1600} valueLabelDisplay="auto"
+                defaultValue={500} // getAriaValueText={valuetext} 
+                step={30}  min={0} 
+                max={1600} 
+                valueLabelDisplay="auto"
               />
             </Box>
           }
