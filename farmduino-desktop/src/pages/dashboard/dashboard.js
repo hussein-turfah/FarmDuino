@@ -4,7 +4,7 @@ import Navbar from '../../components/user-navbar/navbar';
 import Ticker from '../../components/ticker/ticker';
 import { Page_Content_Container, Page_Title, Mybox, Container_title } from '../../components/general-components/general';
 import React from 'react';
-import Plant from '../../components/dashboard-components/plant';
+import { Plant } from '../../components/dashboard-components/plant';
 import Actuators from '../../components/dashboard-components/actuators';
 
 const temperature = process.env.PUBLIC_URL + 'assets/icons/temperature.png';
@@ -19,7 +19,7 @@ const Dashboard = () => {
       <div className='main_container'>
         <Navbar />
         <Ticker />
-        <div className={styles.submain_container}>
+        <div className='submain_container'>
           <Page_Title title="Dashboard" subtitle="Greenhouse 1" />
           <div className={styles.container1}>
             <Container_title title='Greenhouse Details' />
