@@ -11,17 +11,17 @@ const Plant = (props) => {
         children={
           <div className={styles.plant_details_container}>
             <Container_title title="Plant Details" />
-            <div className={styles.plant_image}>
-              <img src={plant_image} />
+            <div className={styles.plant_image_container}>
+              <img src={plant_image} className={styles.plant_image}/>
             </div>
             <h3>
               Plant Species:
-                <ul>
-                  <li>Temperature: </li>
-                  <li>Humidity:</li>
-                  <li>Soil Moisture:</li>
-                  <li>Light Intensity:</li>
-                </ul>
+              <ul>
+                <li>Temperature: </li>
+                <li>Humidity:</li>
+                <li>Soil Moisture:</li>
+                <li>Light Intensity:</li>
+              </ul>
             </h3>
           </div>
         }
