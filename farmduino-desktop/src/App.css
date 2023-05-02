@@ -34,3 +34,10 @@ p{
   font-family: var(--main-font) !important;
 }
 
+.body{
+  background-color: var(--page-background);
+  display: flex;
+}
+.submain_container{
+  margin: 2vh 2vw 0 2vw;
+}
