@@ -12,13 +12,6 @@ export const Page_Title = (props) => {
 };
 
 // for containers that has cards or other components
-export const Page_Content_Container = (props) => {
-  return(
-    <div className={styles.page_content_container}>
-      {props.children}
-    </div>
-  )
-};
 export const Container_title = (props) => {
   return(
     <div className={styles.container_title}>
