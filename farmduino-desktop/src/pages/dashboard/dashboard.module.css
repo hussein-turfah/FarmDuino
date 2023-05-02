@@ -1,17 +1,16 @@
-.body{
-  background-color: var(--page-background);
+.container1{
+  margin: 1vh 0.1vw 0 0.1vw;
   display: flex;
-}
-.submain_container{
-  margin: 1% 2% 0 2%;
+  flex-direction: column;
 }
 .cards_container{
+  margin: 0.5vh 0 0 0;
   display: flex;
   justify-content: space-between;
-  /* background-color: yellow; */
 }
 .container2{
   display: flex;
+  padding: 1vh 0 0 0;
   justify-content: space-between;
-  align-items: flex-start;
+  /* height: 20vh; */
 }
