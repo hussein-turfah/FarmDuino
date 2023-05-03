@@ -2,7 +2,7 @@
   background-color: var(--blue);
   display: flex;
   justify-content: end;
-  width: 82.5vw;
+  width: 100%;
   height: 5vh;
 }
 .main_container{
