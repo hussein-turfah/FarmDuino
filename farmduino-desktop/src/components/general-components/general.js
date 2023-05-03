@@ -14,7 +14,7 @@ export const Page_Title = (props) => {
 // for containers that has cards or other components
 export const Container_title = (props) => {
   return(
-    <div className={styles.container_title}>
+    <div className={props.styles}>
       <h2>{props.title}</h2>
     </div>
   )
@@ -22,7 +22,7 @@ export const Container_title = (props) => {
 
 export const Mybox = (props) => {
   return(
-    <Box className={styles.mybox}>
+    <Box className={props.styles}>
       <Mylogo source={props.image_source}/>  
       <h2>{props.title}</h2>
       <h3>{props.value}</h3>
@@ -42,9 +42,21 @@ export const Myitem = (props) => {
     <div className={styles.myitem}>
       <div className={styles.myitem_container}>
         <Mylogo source={props.image_source}/>
-        <h3>{props.title}</h3>
+        <h3 className={styles.myitem_h3}>{props.title}</h3>
       </div>
       <div>{props.value}</div>
     </div>
+  )
+};
+export const My_weather_box = (props) => {
+  return(
+    <Box className={props.styles}>
+      <h3>{props.date}</h3>
+      <Mylogo source={props.image_source}/>  
+      <p>{props.temperature}</p>
+      <p>{props.description}</p>
+      <p>{props.wind_speed}</p>
+      <p>{props.humidity}</p>
+    </Box>
   )
 };
