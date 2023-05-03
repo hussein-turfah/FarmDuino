@@ -14,18 +14,20 @@ const soil_moisture = process.env.PUBLIC_URL + 'assets/icons/soil_moisture.png';
 const light_intensity = process.env.PUBLIC_URL + 'assets/icons/light_intensity.png';
 
 const Dashboard = () => {
-  const [data, setData] = useState([]);
+  const [weather, setWeather] = useState([]);
+  const [aiData, setAIData] = useState([]);
+  
 
   useEffect(() => {
-    const fetchData = async () => {
+    const weatherData = async () => {
       try {
         const weather = await UseHttp("weather", "GET");
-        setData(weather);
+        setWeather(weather);
       } catch (error) {
         console.log(error);
       }
     };
-    fetchData();
+    weatherData();
   }, []);
 
   return (
@@ -52,13 +54,13 @@ const Dashboard = () => {
           <div className={styles.container3}>
             <Container_title title='Weather Forecast' />
             <div className={styles.cards_container}>
-                {data.map((day, index) => (
+                {weather.map((day, index) => (
                   <My_weather_box styles={styles.my_weather_box}
                     key={index}
                     date={day.date}
                     image_source={`https://openweathermap.org/img/w/${day.icon}.png`}
                     temperature={`Temperature: ${day.temperature}°C`}
-                    description={`Description: ${day.description}`}
+                    description={`Description: ${(day.description).charAt(0).toUpperCase() + (day.description).slice(1)}`}
                     humidity={`Humidity: ${day.humidity}%`}
                     wind_speed={`Wind speed: ${day.wind_speed} Km/h`}
                   />
