@@ -9,7 +9,7 @@ const register_image = process.env.PUBLIC_URL + '/assets/images/register.jpg';
 
 const Register = () => {
   const locale = 'zh-cn';
-  
+
   return (
     <div className={styles.body}>
       <div className={styles.image_container}>
@@ -30,9 +30,10 @@ const Register = () => {
             </LocalizationProvider>
             <TextField className={styles.textfield_container} id="outlined-basic" label="Favorite Color" variant="outlined" required/>
             <TextField className={styles.textfield_container} id="outlined-basic" label="Plant Name" variant="outlined" required/>
-          <div>
-            <Button variant="outlined">Register</Button>
+          <div className={styles.button}>
+            <Button variant='outlined' sx={{background:'#9747FF',height:'100%',width:'50%', padding: '4%', color:'white',":hover":{color:'black',borderColor:'#9747FF'}}}>Register</Button>
           </div>
+            <p className={styles.p}>Already have an account? <a href="/login">Login</a></p>
         </div>
       </div>
     </div>
