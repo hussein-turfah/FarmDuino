@@ -1,5 +1,6 @@
 import { Badge, Link } from '@mui/material';
 import styles from './navbar.module.css';
+import User from '../../pages/user-settings/settings';
 const notifications = process.env.PUBLIC_URL + '/assets/icons/notifications.png';
 const profile = process.env.PUBLIC_URL + '/assets/icons/profile.png';
 
@@ -21,6 +22,7 @@ const Navbar = () => {
         <Link href='/profile' className={styles.logo_container}>
           <img src={profile} alt="logo" className={styles.logo} />
         </Link>
+        <div className={styles.logo_container}><User  /></div>
       </div>
     </div>
   )
