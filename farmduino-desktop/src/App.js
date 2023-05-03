@@ -10,13 +10,15 @@ import Temperature from "./pages/temperature/temperature";
 import Humidity from "./pages/humidity/humidity";
 import Soil_moisture from "./pages/soil-moisture/soil-moisture";
 import Light_intensity from "./pages/light-intensity/light-intensity";
+import ForgotPassword from "./pages/forgot-password/forgot-password";
 
 function App() {
   return (
       <Routes>
+        <Route path="*" element={<Dashboard/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/login" element={<Login/>} />
-        <Route path="*" element={<Dashboard/>} />
+        <Route path="/forgot-password" element={<ForgotPassword/>} />
         <Route path="/temperature" element={<Temperature/>} />
         <Route path="/humidity" element={<Humidity/>} />
         <Route path="/soil-moisture" element={<Soil_moisture/>} />
