@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\FuncCall;
 
 class WeatherController extends Controller
 {
@@ -13,18 +14,25 @@ class WeatherController extends Controller
         $longitude = getenv('LONGITUDE');
         $latitude = getenv('LATITUDE');
         //make the API call
-        $url = "https://api.openweathermap.org/data/2.5/forecast?lat=".$latitude."&lon=".$longitude."&appid=".$api_key."&units=metric";
+        $url = "https://api.openweathermap.org/data/2.5/forecast?lat=".$latitude."&lon=".$longitude."&appid=".$api_key."&units=metric&cnt=3";
         // decode the response
         $response = file_get_contents($url);
-        $response = json_decode($response);
+        $response = json_decode($response);;
         //return the details we need as an array
-        $return_details = array();
-        $return_details['icon'] = $response->list[0]->weather[0]->icon;
-        $return_details['description'] = $response->list[0]->weather[0]->description;
-        $return_details['temperature'] = $response->list[0]->main->temp;
-        $return_details['date'] = date('l d M', strtotime($response->list[0]->dt_txt));
-        $return_details['humidity'] = $response->list[0]->main->humidity;
-        $return_details['wind_speed'] = $response->list[0]->wind->speed;
-        return $return_details;
+        $details = array();
+        foreach ($response->list as $item) {
+            // create a new array for each item with the required properties
+            $forecast = array(
+                'icon' => $item->weather[0]->icon,
+                'description' => $item->weather[0]->description,
+                'temperature' => $item->main->temp,
+                'date' => date('l d M', strtotime($item->dt_txt)),
+                'humidity' => $item->main->humidity,
+                'wind_speed' => $item->wind->speed
+            );
+            // add the new item to the $details array
+            $details[] = $forecast;
+        }
+        return response()->json($details, 200);
     }
 }
