@@ -38,6 +38,10 @@ p{
   background-color: var(--page-background);
   display: flex;
 }
+.main_container{
+  position: relative;
+  margin: 0% 0% 0 20%;
+}
 .submain_container{
   margin: 2% 10% 0 10%;
 }
