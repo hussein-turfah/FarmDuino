@@ -7,10 +7,12 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
+    icon: path.join(__dirname, '../public/assets/images/Hussein_Turfah_FarmDuino.png'),
     webPreferences: {
       nodeIntegration: true,
+      enableRemoteModule: true
     },
-  });
+  }); 
 
   // and load the index.html of the app.
   // win.loadFile("index.html");
