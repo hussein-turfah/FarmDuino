@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('email',45)->unique();
             $table->string('password');
             $table->string('salt',45);
-            $table->string('gender',10);
             $table->date('dob');
             $table->string('favorite_color',45);
             $table->boolean('is_deleted')->default(0);
