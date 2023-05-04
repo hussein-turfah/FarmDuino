@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\FunctionsController;
+use App\Models\Greenhouse;
+use App\Models\Greenhouses;
 
 class RegisterController extends Controller
 {
@@ -53,6 +55,11 @@ class RegisterController extends Controller
             $user->updated_at = $date;
 
             $user->save();
+
+            $greenhouse = new Greenhouse();
+            $greenhouse->users_id = $user->id;
+            $greenhouse->name = $user->plant_name;
+            $greenhouse->save();
 
             return response()->json([
                 "success" => true,
