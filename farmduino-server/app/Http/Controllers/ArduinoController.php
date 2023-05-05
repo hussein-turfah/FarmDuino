@@ -41,10 +41,24 @@ class ArduinoController extends Controller
         ->orderBy('created_at', 'asc')
         ->take(40)
         ->get();
-        
+
         return response()->json([
             'data' => $data
         ], 200);
     }
-    
+
+ public function userReceiveLastData(){
+    $data = Sensor::where('greenhouses_users_id', auth()->user()->id)
+    ->get();
+    $lastData = [];
+
+    foreach ($data as $sensor) {
+        $lastData[$sensor->name] = $sensor->value;
+    }
+
+    return response()->json([
+        'data' => $lastData
+    ], 200);
+}
+
 }
