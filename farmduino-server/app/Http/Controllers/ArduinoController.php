@@ -35,5 +35,16 @@ class ArduinoController extends Controller
         ], 200);
 
     }
+
+    public function userReceiveData(){
+        $data = Sensor::where('greenhouses_users_id', auth()->user()->id)
+        ->orderBy('created_at', 'asc')
+        ->take(40)
+        ->get();
         
+        return response()->json([
+            'data' => $data
+        ], 200);
+    }
+    
 }
