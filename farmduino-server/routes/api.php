@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AIController;
+use App\Http\Controllers\ArduinoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
@@ -29,6 +30,9 @@ Route::group(["prefix" => "v1.0.0"], function () {
     Route::post('/register', [RegisterController::class, "register"]);
     Route::post('/login', [LoginController::class, "login"]);
     Route::post('/check-color', [NewPasswordController::class, "checkColor"]);
+    Route::post('/data', [ArduinoController::class, "recieveData"]);
+    Route::get('/user-data', [ArduinoController::class, "userReceiveData"]);
+    Route::get('/user-last-data', [ArduinoController::class, "userReceiveLastData"]);
     
     Route::controller(AuthController::class)->group(function () {
         Route::post('/logout', 'logout');
