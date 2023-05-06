@@ -89,7 +89,7 @@ public function userSendConfigurations(Request $request){
         $actuator->status = $config['status'];
         $actuator->save();
     }
-    
+    $this->sendToArduino();
     return response()->json([
         'message' => 'Data received'
     ], 200);
