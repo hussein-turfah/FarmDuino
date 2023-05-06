@@ -6,6 +6,9 @@ use App\Models\Actuator;
 use App\Models\Greenhouse;
 use App\Models\Sensor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+ 
+$response = Http::get('http://example.com');
 
 class ArduinoController extends Controller
 {
@@ -68,9 +71,9 @@ public function userSendConfigurations(Request $request){
     $greenhouses_id = Greenhouse::where('users_id', auth()->user()->id)->first()->id;
 
     if($data['fans_switch_state'] === false) $fans = 'off';
-    else $fans = $data['temp_slider_value'];
+    else $fans = $data['fans_slider_value'];
 
-    if($data['light_switch_state'] === false) $lights = 'off';
+    if($data['lights_switch_state'] === false) $lights = 'off';
     else $lights = $data['lights_slider_value'];
 
     $configs=[
@@ -92,4 +95,34 @@ public function userSendConfigurations(Request $request){
     ], 200);
 }
 
+    public function sendToArduino()
+    {
+        $data = Actuator::where('greenhouses_users_id', auth()->user()->id)
+            ->orderBy('created_at', 'desc')
+            ->take(2)
+            ->get();
+
+        $fans = $data[0]->status;
+        $lights = $data[1]->status;
+
+        
+        $url = 'http://localhost:6000/arduino/';
+        $ch = curl_init($url);
+        $user_data = [
+            ['name' => 'fans', 'status' => $fans],
+            ['name' => 'lights', 'status' => $lights]
+        ];
+        $json_data = json_encode($user_data);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return response()->json([
+            'data' => $result, 
+            'message' => 'Data sent',
+        ], 200);
+    }
 }
