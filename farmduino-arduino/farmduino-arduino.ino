@@ -4,7 +4,8 @@
 
 #define DHT_PIN 2
 #define DHT_TYPE DHT22
-
+#define fan_pin 4
+EthernetServer server(80);
 
 DHT dht(DHT_PIN, DHT_TYPE);
 
@@ -42,33 +43,46 @@ void sendData(String data, IPAddress arduino_ip) {
     client.println("Content-Type: application/json");
     client.print("Content-Length: ");
     client.println(data.length());
-    client.println();
     client.println(data);
   } else {
     Serial.println("Connection failed");
   }
-
-  delay(1000);
   client.stop();
 }
 
 
 void setup() {
   Serial.begin(9600);
+  Ethernet.begin(mac);
   dht.begin();
+  pinMode(fan_pin, OUTPUT);
   doc["light_intensity"] = light_intensity;
 }
 
 
 void loop() {
-  Ethernet.begin(mac);
-  IPAddress ip = Ethernet.localIP();
-
-
   readDHTData();
   readSoilMoisture();
   String json_data;
   serializeJson(doc, json_data);
+  IPAddress ip = Ethernet.localIP();
   sendData(json_data, ip);
-  delay(3000);
+
+  // for hosting a server
+  EthernetClient client = server.available();
+  if (client) {
+    if (client.connected()) {
+      while (client.available()) {
+        String request = client.readStringUntil('\r');
+
+        if (request.indexOf("/fan_on") != -1) {
+          digitalWrite(fan_pin, HIGH);
+        } else if (request.indexOf("/fan_off") != -1) {
+          digitalWrite(fan_pin, LOW);
+        }
+      }
+      client.stop();
+    }
+    delay(3000);
+  }
 }
