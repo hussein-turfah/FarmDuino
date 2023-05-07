@@ -34,10 +34,10 @@ void readSoilMoisture() {
 }
 
 
-void sendData(String data) {
+void sendData(String data, IPAddress arduino_ip) {
   if (client.connect("192.168.0.111", 8000)) { //server ip & port
     client.println("POST /api/v1.0.0/data HTTP/1.1");
-    client.println("Host: 192.168.0.110"); //arduino ip
+    client.println("Host: " + arduino_ip); //arduino ip
     client.println("Connection: close");
     client.println("Content-Type: application/json");
     client.print("Content-Length: ");
@@ -61,11 +61,14 @@ void setup() {
 
 
 void loop() {
+  Ethernet.begin(mac);
+  IPAddress ip = Ethernet.localIP();
+
+
   readDHTData();
   readSoilMoisture();
-
   String json_data;
   serializeJson(doc, json_data);
-  sendData(json_data);
+  sendData(json_data, ip);
   delay(3000);
 }
