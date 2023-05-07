@@ -1,13 +1,17 @@
 #include <DHT.h>
+#include <Wire.h>
 
 #define DHT_PIN 2
 #define DHT_TYPE DHT22
+#define GY30_ADDR 0x23
+
 
 DHT dht(DHT_PIN, DHT_TYPE);
 
-int soilMoisturePin = A0;
-int soilMoistureValue = 0;
-int moisturePercentage = 0;
+int soil_moisture_pin = A0;
+int soil_moisture_value = 0;
+int moisture_percentage = 0;
+int light_intensity = -5; //for demonstrating notifications on frontend
 
 
 
@@ -24,13 +28,12 @@ void readDHTData() {
 
 
 void readSoilMoisture() {
-  soilMoistureValue = analogRead(soilMoisturePin);
-  moisturePercentage = map(soilMoistureValue, 0, 1023, 0, 100);
+  soil_moisture_value = analogRead(soil_moisture_pin);
+  moisture_percentage = map(soil_moisture_value, 0, 1023, 0, 100);
   Serial.print("Soil moisture: ");
-  Serial.print(moisturePercentage);
+  Serial.print(moisture_percentage);
   Serial.println("%");
 }
-
 
 
 void setup() {
@@ -41,5 +44,7 @@ void setup() {
 void loop() {
   readDHTData();
   readSoilMoisture();
-  delay(5000);
+  Serial.print(light_intensity);
+  Serial.println(" lux");
+  delay(3000);
 }
