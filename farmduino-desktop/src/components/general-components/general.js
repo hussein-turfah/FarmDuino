@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, FormControl, InputLabel, Select } from "@mui/material";
 import styles from "./general.module.css";
 
 // for pages that has a title ex: Dashboard, Temperature, etc and Greenhouse Number
@@ -6,7 +6,18 @@ export const Page_Title = (props) => {
   return (
     <div className={styles.page_title}>
       <h1>{props.title}</h1>
-      <h3>{props.subtitle}</h3>
+      <div>
+      <FormControl sx={{minWidth: 150, color: "white", backgroundColor:"gray", borderRadius:"4px"  }} disabled>
+        <InputLabel id="demo-simple-select-disabled-label" sx={{ color: "White !important"}}>GreenHouse 1</InputLabel>
+        <Select
+          labelId="demo-simple-select-disabled-label"
+          id="demo-simple-select-disabled"
+          label="GreenHouse 1"
+          sx={{ color: "white", "& .MuiSelect-icon": { color: "white !important" } }}
+        >
+        </Select>
+      </FormControl>
+    </div>
     </div>
   );
 };
@@ -24,8 +35,8 @@ export const Mybox = (props) => {
   return(
     <Box className={props.styles}>
       <Mylogo source={props.image_source}/>  
-      <h2>{props.title}</h2>
-      <h3>{props.value}</h3>
+      <h3>{props.title}</h3>
+      <h2>{props.value}</h2>
     </Box>
   )
 };
@@ -36,7 +47,14 @@ export const Mylogo = (props) => {
     </div>
   )
 };
-
+export const Myboxnologo = (props) => {
+  return(
+    <Box className={props.styles}>
+      <p>{props.title}</p>
+      <h2>{props.value}</h2>
+    </Box>
+  )
+};
 export const Myitem = (props) => {
   return(
     <div className={styles.myitem}>
