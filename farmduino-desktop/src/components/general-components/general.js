@@ -66,6 +66,17 @@ export const Myitem = (props) => {
     </div>
   )
 };
+export const Myactuators = (props) => {
+  return(
+    <div className={styles.myactuators}>
+      <div className={styles.myactuators_container}>
+        <Mylogo source={props.image_source}/>
+        <h3 className={styles.h3}>{props.title}</h3>
+      </div>
+      <div>{props.value}</div>
+    </div>
+  )
+};
 export const My_weather_box = (props) => {
   return(
     <Box className={props.styles}>
