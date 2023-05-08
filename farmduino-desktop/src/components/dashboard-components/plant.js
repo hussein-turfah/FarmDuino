@@ -31,20 +31,23 @@ export const Plant = (props) => {
 
 export const Plant_row = (props) => {
   return (
-    <div className={styles.plant_details_row}>
-      <div className={styles.plant_details_container_row}>
-        <Container_title title="Plant Details" />
-        <div>
-          <h3>&nbsp;&nbsp;Plant Species:</h3>
-          <h3>&nbsp;&nbsp;Temperature: </h3>
-          <h3>&nbsp;&nbsp;Humidity:</h3>
-          <h3>&nbsp;&nbsp;Soil Moisture:</h3>
-          <h3>&nbsp;&nbsp;Light Intensity:</h3>
-        </div>      
+    <div className={styles.row_plant_body}>
+      <Container_title title="Plant Details" />
+      <div className={styles.row_plant_details_container}>
+      <div className={styles.row_first_row}>
+        <div className={styles.row_plant_image_container}>
+          <img src={plant_image} className={styles.plant_image} />
+        </div>
+       <Myboxnologo styles={styles.row_plant_species} 
+       title="Plant Species" value="BANANA (MUSA)"/>
       </div>
-      <div className={styles.plant_image_container_row}>
-        <img src={plant_image} className={styles.plant_image_row} />
+      <div className={styles.row_second_row}>
+        <Myboxnologo styles={styles.row_ai_readings} title="Temperature" value="25*C" />
+        <Myboxnologo styles={styles.row_ai_readings} title="Humidity" value="20%" />
+        <Myboxnologo styles={styles.row_ai_readings} title="Soil Moisture" value="50%" />
+        <Myboxnologo styles={styles.row_ai_readings} title="Light Intensity" value="50%" />
       </div>
+    </div>
     </div>
   );
 };
