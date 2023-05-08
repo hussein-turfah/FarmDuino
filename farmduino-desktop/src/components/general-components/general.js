@@ -77,15 +77,30 @@ export const Myactuators = (props) => {
     </div>
   )
 };
+
 export const My_weather_box = (props) => {
   return(
-    <Box className={props.styles}>
-      <h3>{props.date}</h3>
-      <Mylogo source={props.image_source}/>  
-      <p>{props.temperature}</p>
-      <p>{props.description}</p>
-      <p>{props.wind_speed}</p>
-      <p>{props.humidity}</p>
+    <Box className={styles.my_weather_box}>
+      <div className={styles.weather_row1}>
+        <Myboxnologo styles={styles.date} value={props.date}></Myboxnologo>
+        <Myweatherlogo source={props.image_source}/>  
+      </div>
+      <div className={styles.weather_row2}>
+        <Myboxnologo styles={styles.weather_small_box} title={props.temperature} value={props.temp_value}/>
+        <Myboxnologo styles={styles.weather_small_box} title={props.humidity} value={props.humidity_value}/>
+      </div>
+      <div className={styles.weather_row2}>
+        <Myboxnologo styles={styles.weather_small_box} title={props.wind_speed} value={props.wind_speed_value} />
+        <Myboxnologo styles={styles.weather_small_box} title={props.description} value={props.desc_value}/>
+      </div>
     </Box>
+  )
+};
+
+export const Myweatherlogo = (props) => {
+  return(
+    <div className={styles.weather_logo}>
+      <img src={props.source} className={styles.mylogo_image} alt="Logo" />
+    </div>
   )
 };
