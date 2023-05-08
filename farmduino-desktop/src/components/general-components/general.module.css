@@ -61,3 +61,41 @@
 .myactuators>h3{
   width: 60%;
 }
+/* My weather box */
+
+.my_weather_box{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 4px;
+  justify-content: space-evenly;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.weather_row1{
+  margin: 0 2%;
+  padding: 1%;
+  display: flex;
+  justify-content: space-between;
+  height: 35%;
+}
+.weather_row2{
+  margin: 0 2%;
+  display: flex;
+  height: 25%; 
+  justify-content: space-around;
+}
+.weather_small_box{
+  background-color: var(--page-background);
+  border-radius: 4px;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  justify-content: space-evenly;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.weather_logo{
+  width: 30%;
+  height: 100%;
+}
