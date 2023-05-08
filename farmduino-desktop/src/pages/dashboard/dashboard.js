@@ -16,7 +16,21 @@ const light_intensity = process.env.PUBLIC_URL + 'assets/icons/light_intensity.p
 const Dashboard = () => {
   const [weather, setWeather] = useState([]);
   const [aiData, setAIData] = useState([]);
+
+  //get date because of a problem in external api used for weather 
+  const dates = [];
+  for (let i = 0; i < 3; i++) {
+    const date = new Date();
+    date.setDate(new Date().getDate() + i);
+    const weekday = date.toLocaleDateString("en-US", {weekday: "short"});
+    const dateString = date.toLocaleDateString("en-US", {
+      day: "numeric",
+      month: "short",
+    });
+    dates.push({ date: dateString, weekday: weekday });
+  }
   
+
 
   useEffect(() => {
     const weatherData = async () => {
@@ -53,16 +67,19 @@ const Dashboard = () => {
           </div>
           <div className={styles.container3}>
             <Container_title title='Weather Forecast' />
-            <div className={styles.cards_container}>
+            <div className={styles.weather_cards_container}>
                 {weather.map((day, index) => (
-                  <My_weather_box styles={styles.my_weather_box}
+                  <My_weather_box
                     key={index}
-                    date={day.date}
-                    image_source={`https://openweathermap.org/img/w/${day.icon}.png`}
-                    temperature={`Temperature: ${day.temperature}°C`}
-                    description={`Description: ${(day.description).charAt(0).toUpperCase() + (day.description).slice(1)}`}
-                    humidity={`Humidity: ${day.humidity}%`}
-                    wind_speed={`Wind speed: ${day.wind_speed} Km/h`}
+                    date={`${dates[index].weekday} ${dates[index].date}`}                    image_source={`https://openweathermap.org/img/w/${day.icon}.png`}
+                    temperature={"Temperature"}
+                    temp_value={`${day.temperature}°C`}
+                    humidity={"Humidity"}
+                    humidity_value={`${day.humidity}%`}
+                    description={"Description"}
+                    desc_value={day.description.charAt(0).toUpperCase() + day.description.slice(1)}                    humidity={`Humidity: ${day.humidity}%`}
+                    wind_speed={"Wind speed"}
+                    wind_speed_value={`${day.wind_speed}Km/h`}
                   />
                 ))}
             </div>
