@@ -24,6 +24,7 @@
   justify-content: center;
 }
 .buttons{
+  border-radius: 4px;
   display: flex;
   margin: 5% 0% !important;
   padding: 0 10px;
