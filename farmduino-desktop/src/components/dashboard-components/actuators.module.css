@@ -11,9 +11,3 @@
   height: 100%;
   margin: 2% 0 0 0;
 }
-.button{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
