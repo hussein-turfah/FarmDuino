@@ -12,7 +12,7 @@
   --subtitle: 1.563rem;
   --body: 0.938rem;
 
-  --main-font: roboto;
+  --main-font: sans-serif;
 }
 h1{
   font-size: var(--title)!important;
@@ -38,12 +38,10 @@ p{
   background-color: var(--page-background);
   display: flex;
   flex-direction: column;
-  /* background-color: red; */
 }
 .main_container{
   position: relative;
   margin: 0% 0% 5% 20%;
-  /* background-color: blue; */
 }
 .submain_container{
   margin: 2% 10% 0 10%;
