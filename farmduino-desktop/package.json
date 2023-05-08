@@ -30,12 +30,11 @@
     "styled-components": "^5.3.10"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently -k \"react-scripts start\" \"electron .\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
-    "electron": "electron ."
+    "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\""
   },
   "eslintConfig": {
     "extends": [
