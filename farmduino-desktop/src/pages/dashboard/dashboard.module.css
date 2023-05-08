@@ -13,7 +13,7 @@
   width: 15vw;
   border-radius: 4px;
   color: white;
-  height: 11vw;
+  height: 8vw;
   background-color: var(--cyan);
   display: flex;
   flex-direction: column;
@@ -35,14 +35,14 @@
   justify-content: space-between;
 }
 .actuators{
-  height: 100%;
+  object-fit: fill;
   width: 50%;
   display: flex;
 }
 .plant{
   width: 45%;
   display: flex;
-  height: 100%;
+  object-fit: fill;
 }
 .container3{
   display: flex;
