@@ -11,6 +11,7 @@
 }
 .mybox{
   width: 15vw;
+  border-radius: 4px;
   color: white;
   height: 11vw;
   background-color: var(--cyan);
@@ -34,11 +35,12 @@
   justify-content: space-between;
 }
 .actuators{
-  width: 47%;
+  height: 100%;
+  width: 50%;
   display: flex;
 }
 .plant{
-  width: 47%;
+  width: 45%;
   display: flex;
   height: 100%;
 }
