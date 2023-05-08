@@ -1,4 +1,4 @@
-import { Container_title, Cyan_button, Myitem } from "../general-components/general";
+import { Container_title, Cyan_button, Myactuators, Myitem } from "../general-components/general";
 import styles from "./actuators.module.css";
 import { Box, Button, Slider, Switch } from '@mui/material';
 import React, { useState } from 'react';
@@ -44,8 +44,8 @@ const Actuators = (props) => {
     <div className={styles.actuator_settings}>
       <Container_title title="Actuator Settings" />
       <div className={styles.settings_container}>
-        <Myitem title="Fans On/Off" image_source={fan} value={<Switch checked={fansSwitchState} onChange={handleFansSwitchChange}/>} />
-        <Myitem
+        <Myactuators title="Fans On/Off"  image_source={fan} value={<Switch checked={fansSwitchState} onChange={handleFansSwitchChange}/>} />
+        <Myactuators
           title="Temperature"
           image_source={temperature}
           value={
@@ -60,12 +60,12 @@ const Actuators = (props) => {
             </Box>
           }
         />
-        <Myitem
+        <Myactuators
           title="Lights On/Off"
           image_source={light1}
           value={<Switch onChange={handleLightsSwitchChange}/>}
         />
-        <Myitem
+        <Myactuators
           title="Light Intensity"
           image_source={light}
           value={
@@ -80,10 +80,6 @@ const Actuators = (props) => {
             </Box>
           }
         />
-      </div>
-      <br />
-      <div className={styles.button}>
-        <Button onClick={handleSave} variant="outlined" sx={{padding: '4%',borderColor:'#65BEFF', background:'#65BEFF', height:'100%', width:'30%' , color:'white', ':hover':{background:'none', color:'black', borderColor:'#65BEFF'}}}>Save Changes</Button>
       </div>
     </div>
   );
