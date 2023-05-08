@@ -20,7 +20,9 @@
 /* Myitem */
 .myitem{
   background-color: white;
-  padding: 10px 5px;
+  border-radius: 4px;
+  height: 17%;
+  padding: 1% 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,9 +31,7 @@
 }
 .myitem_container{
   display: flex;
-  gap: 7vw;
   width: 50%;
-  justify-content: space-;
   align-items: center;
 }
 .myitem_h3{
