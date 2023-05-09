@@ -32,7 +32,7 @@ export const Plant = (props) => {
 export const Plant_row = (props) => {
   return (
     <div className={styles.row_plant_body}>
-      <Container_title title="Plant Details" />
+      <Container_title title="Consult AI" />
       <div className={styles.row_plant_details_container}>
       <div className={styles.row_first_row}>
         <div className={styles.row_plant_image_container}>
