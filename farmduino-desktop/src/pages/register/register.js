@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router';
 import UseHttp from '../../hooks/http-request';
 
 const register_image = process.env.PUBLIC_URL + '/assets/images/register.jpg';
+const image = process.env.PUBLIC_URL + '/assets/images/colored_logo.svg';
 
 const Register = () => {
   const locale = 'zh-cn';
@@ -52,6 +53,7 @@ const Register = () => {
         <img src={register_image} alt="Register" className={styles.image} />
       </div>
       <div className={styles.main_container}>
+      <img src={image} alt="logo" className={styles.logo} />
         <h1 className={styles.h1}>Register</h1>
         <div className={styles.submain_container}>
           <div className={styles.name_fields}>
@@ -66,7 +68,7 @@ const Register = () => {
             <TextField className={styles.textfield_container} id="outlined-basic" label="Favorite Color" variant="outlined" required inputRef={favorite_color_ref}/>
             <TextField className={styles.textfield_container} id="outlined-basic" label="Plant Name" variant="outlined" required inputRef={plant_name_ref}/>
           <div className={styles.button}>
-            <Button variant='outlined' sx={{background:'#9747FF',height:'100%',width:'50%', padding: '4%', color:'white',":hover":{color:'black',borderColor:'#9747FF'}}} onClick={sendData}>Register</Button>
+            <Button variant='outlined' sx={{background:'#9747FF',height:'100%',width:'100%', padding: '4%', color:'white',":hover":{color:'black',borderColor:'#9747FF'}}} onClick={sendData}>Register</Button>
           </div>
             <p className={styles.p}>Already have an account? <a href="/login">Login</a></p>
         </div>
