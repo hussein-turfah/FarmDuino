@@ -8,6 +8,7 @@ import { Plant } from '../../components/dashboard-components/plant';
 import Actuators from '../../components/dashboard-components/actuators';
 import UseHttp from '../../hooks/http-request';
 
+const weather_image = process.env.PUBLIC_URL + 'assets/icons/rect65.png';
 const temperature = process.env.PUBLIC_URL + 'assets/icons/temperature.png';
 const humidity = process.env.PUBLIC_URL + 'assets/icons/humidity.png';
 const soil_moisture = process.env.PUBLIC_URL + 'assets/icons/soil_moisture.png';
@@ -49,7 +50,6 @@ const Dashboard = () => {
       <Sidebar />
       <div className='main_container'>
         <Navbar />
-        <Ticker />
         <div className='submain_container'>
           <Page_Title title="Dashboard" subtitle="Greenhouse 1" />
           <div className={styles.container1}>
@@ -71,7 +71,9 @@ const Dashboard = () => {
                 {weather.map((day, index) => (
                   <My_weather_box
                     key={index}
-                    date={`${dates[index].weekday} ${dates[index].date}`}                    image_source={`https://openweathermap.org/img/w/${day.icon}.png`}
+                    date={`${dates[index].weekday} ${dates[index].date}`}                    
+                    // image_source={`https://openweathermap.org/img/w/${day.icon}.png`}
+                    image_source={weather_image}
                     temperature={"Temperature"}
                     temp_value={`${day.temperature}°C`}
                     humidity={"Humidity"}
@@ -80,11 +82,12 @@ const Dashboard = () => {
                     desc_value={day.description.charAt(0).toUpperCase() + day.description.slice(1)}                    humidity={`Humidity: ${day.humidity}%`}
                     wind_speed={"Wind speed"}
                     wind_speed_value={`${day.wind_speed}Km/h`}
-                  />
+                    />
                 ))}
             </div>
           </div>
         </div>
+    <Ticker />
       </div>
     </div>
   );
