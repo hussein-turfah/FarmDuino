@@ -50,7 +50,7 @@ export const Mylogo = (props) => {
 export const Myboxnologo = (props) => {
   return(
     <Box className={props.styles}>
-      <p>{props.title}</p>
+      <h3>{props.title}</h3>
       <h2>{props.value}</h2>
     </Box>
   )
