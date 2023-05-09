@@ -16,7 +16,6 @@
   height: 100%;
 }
 .buttons_container {
-  /* margin: 45%; */
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -37,7 +36,6 @@
   text-decoration: none !important;
 }
 .buttons:hover{
-  /* background-color: red !important; */
   font-weight: 500;
 }
 .logos{
@@ -55,4 +53,18 @@
 .links{
   color: rgb(255, 255, 255) !important;
   size: inherit !important;
+}
+.fields_container{
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  width: 80%;
+  height: 50%;
+}
+.modal_buttons{
+  display: flex;
+  justify-content: space-between;
+  /* background-color: red; */
+  width: 100%;
 }
