@@ -3,6 +3,7 @@ import styles from "./login.module.css";
 import { useNavigate } from "react-router";
 import { useRef } from "react";
 import UseHttp from "../../hooks/http-request";
+const image = "../../assets/images/colored_logo.svg";
 
 const LoginImage = process.env.PUBLIC_URL + '/assets/images/login.jpg';
 
@@ -33,6 +34,7 @@ const Login = () => {
         <img src={LoginImage} alt="Login" className={styles.image} />
       </div>
       <div className={styles.main_container}>
+          <img src={image} alt="logo" className={styles.logo} />
         <h1 className={styles.h1}>Login</h1>
         <div className={styles.submain_container}>
           <div className={styles.textfield_container}>
@@ -40,7 +42,7 @@ const Login = () => {
             <TextField className={styles.field} id="outlined-basic" label="Password" variant="outlined" type="password" required inputRef={password_ref} />
           </div>
           <Button variant="outlined" sx={{
-            background: '#9747FF', height: '100%', width: '30%', padding: '3%', color: 'white',
+            background: '#9747FF', height: '100%', width: '80%', padding: '3%', color: 'white',
             ":hover": { color: 'black', borderColor: '#9747FF' }
           }}
             onClick={saveToken}>
