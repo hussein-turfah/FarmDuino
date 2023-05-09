@@ -49,3 +49,7 @@
   align-items: center;
   justify-content: center;
 }
+.logo{
+  width: 80%;
+  padding-bottom: 5%;
+}
