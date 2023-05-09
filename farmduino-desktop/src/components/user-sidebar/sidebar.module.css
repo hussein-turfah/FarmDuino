@@ -8,15 +8,15 @@
   background-color: var(--purple);
 }
 .logo_container {
-  padding: 5% 0%;
-  width: 90%;
+  padding: 23% 0% 30% 0;
+  width: 80%;
 }
 .logo {
   width: 100%;
   height: 100%;
 }
 .buttons_container {
-  margin: 45%;
+  /* margin: 45%; */
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -35,6 +35,10 @@
   width: 100%;
   height: 5vh;
   text-decoration: none !important;
+}
+.buttons:hover{
+  /* background-color: red !important; */
+  font-weight: 500;
 }
 .logos{
   width: 3vh;
