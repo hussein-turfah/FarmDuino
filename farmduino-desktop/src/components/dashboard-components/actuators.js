@@ -1,3 +1,4 @@
+import ArduinoSend from "../../hooks/arduino-http";
 import { Container_title, Cyan_button, Myactuators, Myitem } from "../general-components/general";
 import styles from "./actuators.module.css";
 import { Box, Button, Slider, Switch } from '@mui/material';
@@ -17,8 +18,13 @@ const Actuators = (props) => {
   const [tempSliderValue, setTempSliderValue] = useState(20);
   const [lightSliderValue, setLightSliderValue] = useState(300);
   
-  const handleFansSwitchChange = () => {
+  const  handleFansSwitchChange = async () => {
     setFansSwitchState(!fansSwitchState);
+    if (fansSwitchState === false) {
+      ArduinoSend("/fan_on");
+    }else{
+      ArduinoSend("/fan_off");
+    }
   };
   const handleLightsSwitchChange = () => {
     setLightsSwitchState(!lightsSwitchState);
@@ -49,7 +55,7 @@ const Actuators = (props) => {
           title="Temperature"
           image_source={temperature}
           value={
-            <Box sx={{ width: 200 }}>
+            <Box sx={{ width: 200, paddingRight: 2}}>
               <Slider
                 aria-label="Custom marks"
                 value={tempSliderValue}
@@ -69,7 +75,7 @@ const Actuators = (props) => {
           title="Light Intensity"
           image_source={light}
           value={
-            <Box sx={{ width: 200 }}>
+            <Box sx={{ width: 200,paddingRight: 2 }}>
               <Slider onChange={handleLightsSliderChange} value={lightSliderValue}
                 aria-label="Small steps"
                 defaultValue={500}
