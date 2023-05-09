@@ -12,26 +12,29 @@
   --subtitle: 1.563rem;
   --body: 0.938rem;
 
-  --main-font: sans-serif;
+  /* --main-font: Roboto; */
+  /* --main-font: 'Raleway', sans-serif; */
+
 }
 h1{
   font-size: var(--title)!important;
-  font-weight: 900 !important;
-  font-family: var(--main-font) !important;
+  font-weight: 500 !important;
+  font-family: 'Roboto', sans-serif !important;
 }
 h2{
   font-size: var(--subtitle)!important;
-  font-weight: 700 !important;
-  font-family: var(--main-font) !important;
+  font-weight: 400 !important;
+  font-family: 'Roboto', sans-serif !important;
 }
 h3{
-   font-size: 1.25rem !important;
-  font-weight: 500 !important;
+  font-size: 1.25rem !important;
+  font-weight: 300 !important;
+  font-family: 'Roboto', sans-serif !important;
 }
 p{
   font-size: var(--body) !important;
-  font-weight: 400 !important;
-  font-family: var(--main-font) !important;
+  font-weight: 300 !important;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 .body{
@@ -41,17 +44,21 @@ p{
 }
 .main_container{
   position: relative;
-  margin: 0% 0% 5% 20%;
+  margin: 0% 0% 0% 20%;
 }
 .submain_container{
-  margin: 2% 10% 0 10%;
+  margin: 2% 5% 2% 5%;
 }
 .graph_container{
-  height: 90vh;
+  /* margin: 5% 0.1vw 0 0.1vw; */
+  display: flex;
+  /* height: fit-content; */
+  flex-direction: column;
+  /* height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 5% 0%;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
 }
