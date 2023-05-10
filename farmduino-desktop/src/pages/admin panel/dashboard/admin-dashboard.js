@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './admin-dashboard.module.css'
 import AdminSidebar from '../../../components/user-sidebar/admin-sidebar'
-import { Admin_Page_Title, Container_title, Page_Title } from '../../../components/general-components/general';
+import { Admin_Page_Title, Container_title} from '../../../components/general-components/general';
 import Ticker from '../../../components/ticker/ticker';
 import AdminNavbar from '../../../components/user-navbar/admin-navbar';
 import UsersTable from '../../../components/admin-components/table/users-table';
