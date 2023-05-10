@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './sidebar.module.css'
 import { Modal, Box, TextField, Button } from '@mui/material';  
 import { Link } from 'react-router-dom';
@@ -12,9 +12,13 @@ const account_settings = process.env.PUBLIC_URL + "/assets/icons/account_setting
 
 
 const AdminSidebar = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const [openTicker, setOpenTicker] = useState(false);
+  const handleOpenTicker = () => setOpenTicker(true);
+  const handleCloseTicker = () => setOpenTicker(false);
 
   const signOut = () => {
     localStorage.removeItem("token");
@@ -40,7 +44,7 @@ const AdminSidebar = () => {
           </div>
             <h3 className={styles.links}>Sensors</h3>
         </Link>
-        <Link onClick={handleOpen} className={styles.buttons}>
+        <Link onClick={handleOpenTicker} className={styles.buttons}>
           <div className={styles.logos}>
             <img src={account_settings} alt="logo" className={styles.buttons_logo}/>
           </div>
@@ -64,13 +68,32 @@ const AdminSidebar = () => {
             <TextField id="outlined-basic" label="Change Email Address" variant="outlined" />
             <TextField id="outlined-basic" label="Old Password" variant="outlined" />
             <TextField id="outlined-basic" label="New Password" variant="outlined" />
-            <TextField id="outlined-basic" label="Change Plant Name" variant="outlined" />
           <div className={styles.modal_buttons}>
             <Button variant="outlined" sx={{background: '#65BEFF', height: '100%', width: '40%', padding: '3%', color: 'white',":hover": {borderColor: '#9747FF', backgroundColor:"#9747FF" }}}>
               Save Changes
             </Button>
             <Button variant="outlined" onClick={signOut} sx={{background: '#9747FF', height: '100%', width: '40%', padding: '3%', color: 'white',":hover": {borderColor: '#65BEFF', backgroundColor:"red" }}}>
               logout
+            </Button>
+          </div>
+        </div>
+        </Box>
+      </Modal>
+
+      <Modal className={styles.modal}
+        open={openTicker}
+        onClose={handleCloseTicker}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box className={styles.ticker_modal_container}>
+          <h1 className={styles.modal_header}>Insert to Ticker</h1>
+          <div className={styles.fields_container}>
+            <TextField id="outlined-basic" label="Element Name" variant="outlined" />
+            <TextField id="outlined-basic" label="Market Price" variant="outlined" />
+          <div className={styles.ticker_modal_buttons}>
+            <Button variant="outlined" sx={{background: '#65BEFF', height: '100%', width: '40%', padding: '3%', color: 'white',":hover": {borderColor: '#9747FF', backgroundColor:"#9747FF" }}}>
+              Save Changes
             </Button>
           </div>
         </div>
