@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './admin-sidebar.module.css'
+import styles from './sidebar.module.css'
 import { Modal, Box, TextField, Button } from '@mui/material';  
 import { Link } from 'react-router-dom';
 
@@ -7,9 +7,7 @@ import { Link } from 'react-router-dom';
 const logo = process.env.PUBLIC_URL + "/assets/images/logo1.svg";
 const dashboard = process.env.PUBLIC_URL + "/assets/icons/dashboard.png";
 const temperature = process.env.PUBLIC_URL + "/assets/icons/temperature.png";
-const humidity = process.env.PUBLIC_URL + "/assets/icons/humidity.png";
-const soil_moisture = process.env.PUBLIC_URL + "/assets/icons/soil_moisture.png";
-const light_intensity = process.env.PUBLIC_URL + "/assets/icons/light_intensity.png";
+
 const account_settings = process.env.PUBLIC_URL + "/assets/icons/account_settings.png";
 
 
@@ -36,11 +34,17 @@ const AdminSidebar = () => {
           </div>
             <h3 className={styles.links}>Dashboard</h3>
         </Link>
-        <Link href="/admin-temperature" className={styles.buttons}>
+        <Link href="/sensors" className={styles.buttons}>
           <div className={styles.logos}>
             <img src={temperature} alt="logo" className={styles.buttons_logo}/>
           </div>
             <h3 className={styles.links}>Sensors</h3>
+        </Link>
+        <Link onClick={handleOpen} className={styles.buttons}>
+          <div className={styles.logos}>
+            <img src={account_settings} alt="logo" className={styles.buttons_logo}/>
+          </div>
+            <h3 className={styles.links}>Add to Ticker</h3>
         </Link>
         <Link onClick={handleOpen} className={styles.buttons}>
           <div className={styles.logos}>
