@@ -40,7 +40,7 @@ const AdminSidebar = () => {
           <div className={styles.logos}>
             <img src={temperature} alt="logo" className={styles.buttons_logo}/>
           </div>
-            <h3 className={styles.links}>Temperature</h3>
+            <h3 className={styles.links}>Sensors</h3>
         </Link>
         <Link onClick={handleOpen} className={styles.buttons}>
           <div className={styles.logos}>
