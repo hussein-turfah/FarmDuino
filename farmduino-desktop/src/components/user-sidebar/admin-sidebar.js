@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './sidebar.module.css'
 import { Modal, Box, TextField, Button } from '@mui/material';  
 import { Link } from 'react-router-dom';
+import UseHttp from '../../hooks/http-request';
 
 
 const logo = process.env.PUBLIC_URL + "/assets/images/logo1.svg";
@@ -16,6 +17,9 @@ const AdminSidebar = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const product_name_ref=useRef("") 
+  const price_ref=useRef("");
+  
   const [openTicker, setOpenTicker] = useState(false);
   const handleOpenTicker = () => setOpenTicker(true);
   const handleCloseTicker = () => setOpenTicker(false);
@@ -25,6 +29,24 @@ const AdminSidebar = () => {
     window.location.href = "/login";
   };
 
+
+  const insertTickerData = async () => {
+    const product_name = product_name_ref.current.value;
+    const price = price_ref.current.value;
+  
+    const form_data = new FormData();
+
+    form_data.append("product_name", product_name);
+    form_data.append("price", price);
+
+    const data = await UseHttp("admin/add-ticker-element", "POST",form_data,{Authorization: "bearer " + localStorage.getItem("token")});
+    if (data.error === false) {
+      alert("error")
+    }else{
+      const product_name = product_name_ref.current.value = "";
+      const price = price_ref.current.value = "" ;
+    }
+  }
 
   return (
     <div className={styles.sidebar}>
@@ -89,11 +111,11 @@ const AdminSidebar = () => {
         <Box className={styles.ticker_modal_container}>
           <h1 className={styles.modal_header}>Insert to Ticker</h1>
           <div className={styles.fields_container}>
-            <TextField id="outlined-basic" label="Element Name" variant="outlined" />
-            <TextField id="outlined-basic" label="Market Price" variant="outlined" />
+            <TextField id="outlined-basic" label="Element Name" variant="outlined" inputRef={product_name_ref} />
+            <TextField id="outlined-basic" label="Market Price" variant="outlined" inputRef={price_ref} />
           <div className={styles.ticker_modal_buttons}>
-            <Button variant="outlined" sx={{background: '#65BEFF', height: '100%', width: '40%', padding: '3%', color: 'white',":hover": {borderColor: '#9747FF', backgroundColor:"#9747FF" }}}>
-              Save Changes
+            <Button variant="outlined" onClick={insertTickerData} sx={{background: '#65BEFF', height: '100%', width: '40%', padding: '3%', color: 'white',":hover": {borderColor: '#9747FF', backgroundColor:"#9747FF" }}}>
+              Add Element
             </Button>
           </div>
         </div>
