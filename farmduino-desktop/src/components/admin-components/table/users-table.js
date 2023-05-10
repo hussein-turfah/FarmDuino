@@ -38,11 +38,53 @@ const UsersTable = () => {
   return (
     <div>
       <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-      <TableContainer sx={{ maxHeight: 440 }}>
+      <TableContainer sx={{ maxHeight: 660 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
-             </TableRow>
+            <TableCell>
+                ID
+              </TableCell>
+              <TableCell>
+                First Name
+              </TableCell>
+              <TableCell>
+                Last Name
+              </TableCell>
+              <TableCell>
+                Email
+              </TableCell>
+              <TableCell>
+                Plant
+              </TableCell>
+              <TableCell>
+                Role
+              </TableCell>
+            </TableRow>
+            {
+              users.map((user) => (
+                <TableRow key={user.id}>
+                  <TableCell>
+                    {user.id}
+                  </TableCell>
+                  <TableCell>
+                    {user.first_name}
+                  </TableCell>
+                  <TableCell>
+                    {user.last_name}
+                  </TableCell>
+                  <TableCell>
+                    {user.email}
+                  </TableCell>
+                  <TableCell>
+                    {user.plant_name}
+                  </TableCell>
+                  <TableCell>
+                    {user.is_admin == 1 ? 'Admin' : 'User'}
+                  </TableCell>
+                </TableRow>
+              ))
+            }
           </TableHead>
           <TableBody>
           </TableBody>
