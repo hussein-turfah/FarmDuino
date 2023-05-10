@@ -38,31 +38,32 @@ const UsersTable = () => {
   return (
     <div>
       <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-      <TableContainer sx={{ maxHeight: 660 }}>
+      <TableContainer sx={{ height:660 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
-            <TableCell>
+            <TableCell sx={{backgroundColor: "#65BEFF"}}>
                 ID
               </TableCell>
-              <TableCell>
+              <TableCell sx={{backgroundColor: "#65BEFF"}}>
                 First Name
               </TableCell>
-              <TableCell>
+              <TableCell sx={{backgroundColor: "#65BEFF"}}>
                 Last Name
               </TableCell>
-              <TableCell>
+              <TableCell sx={{backgroundColor: "#65BEFF"}}>
                 Email
               </TableCell>
-              <TableCell>
+              <TableCell sx={{backgroundColor: "#65BEFF"}}>
                 Plant
               </TableCell>
-              <TableCell>
+              <TableCell sx={{backgroundColor: "#65BEFF"}}>
                 Role
               </TableCell>
             </TableRow>
             {
-              users.map((user) => (
+              users.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage) //to slice the data and show only needed rows per page
+              .map((user) => (
                 <TableRow key={user.id}>
                   <TableCell>
                     {user.id}
