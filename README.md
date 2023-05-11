@@ -55,7 +55,7 @@
 | ![fsdaf](./readme/wireframes/ticker.png) | ![fsdaf](./readme/wireframes/admin_settings.png) |
 
 ### Mockups
-| Login screen  | Register screen |  Landing screen | Admin Settings Modal |
+| Login screen  | Register screen |  Landing screen | 
 | ---| ---| ---|
 | ![Landing](./readme/mockups/login.png) | ![fsdaf](./readme/mockups/register.png) | ![fsdaf](./readme/mockups/main.png) | 
 
@@ -63,30 +63,31 @@ Sensors screen | Account Settings Modal | Notifications Modal |
 | ---| ---| ---|  
 ![fsdaf](./readme/mockups/sensors.png) | ![fsdaf](./readme/mockups/settings.png) | ![fsdaf](./readme/mockups/notifications.png) | ![fsdaf](./readme/mockups/users.png) |
 
-Admin Main Screen | Insert to Ticker Modal |
+Admin Main Screen | Insert to Ticker Modal | Admin Settings Modal |
 | ---| ---|
- ![fsdaf](./readme/mockups/ticker.png) | ![fsdaf](./readme/mockups/admin_settings.png) |
+ ![fsdaf](./readme/mockups/ticker.png) | ![fsdaf](./readme/mockups/admin_settings.png) | ![fsdaf](./readme/mockups/admin_settings.png) |
 
 <br><br>
 
 <!-- Implementation -->
 <img src="./readme/title4.svg"/>
 
-> Using the wireframes and mockups as a guide, we implemented the Coffee Express app with the following features:
+> Using the wireframes and mockups as a guide, we implemented the FarmDuino app with the following features:
 
-### User Screens (Mobile)
-| Login screen  | Register screen | Landing screen | Sensors screen | Account Settings | 
+### User Screens (Desktop & Web)
+| Login screen  | Register screen | Landing screen |  Landing Screen | 
+| ---| ---|  ---| ---|
+| ![Landing](./readme/app/login.png) | ![fsdaf](./readme/app/register.png) | ![fsdaf](./readme/app/main.png) | ![fsdaf](./readme/app/main2.png) |
+
+| Sensors screen | Sensors screen | Account Settings Modal | Notifications Modal | 
 | ---| ---| ---| ---|
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
-| Home screen  | Menu Screen | Order Screen | Checkout Screen |
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
+| ![fsdaf](./readme/app/sensors.png) | ![fsdaf](./readme/app/sensors2.png) | ![fsdaf](./readme/app/settings.png) | ![fsdaf](./readme/app/notifications.png) |
 
-### Admin Screens (Web)
-| Login screen  | Register screen |  Landing screen |
+
+### Admin Screens (Desktop & Web)
+ |  Landing screen | Settings Modal | Notifications Modal |
 | ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
-| Home screen  | Menu Screen | Order Screen |
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| ![Landing](./readme/app/users.png) | ![fsdaf](./readme/app/settings.png) | ![fsdaf](./readme/app/notifications.png) |
 
 <br><br>
 
