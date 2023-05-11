@@ -59,13 +59,13 @@
 | ---| ---| ---|
 | ![Landing](./readme/mockups/login.png) | ![fsdaf](./readme/mockups/register.png) | ![fsdaf](./readme/mockups/main.png) | 
 
-Sensors screen | Account Settings Modal | Notifications Modal |
+| Sensors screen | Account Settings Modal | Notifications Modal |
 | ---| ---| ---|  
-![fsdaf](./readme/mockups/sensors.png) | ![fsdaf](./readme/mockups/settings.png) | ![fsdaf](./readme/mockups/notifications.png) | ![fsdaf](./readme/mockups/users.png) |
+| ![fsdaf](./readme/mockups/sensors.png) | ![fsdaf](./readme/mockups/settings.png) | ![fsdaf](./readme/mockups/notifications.png) | ![fsdaf](./readme/mockups/users.png) |
 
-Admin Main Screen | Insert to Ticker Modal | Admin Settings Modal |
+| Admin Main Screen | Insert to Ticker Modal | Admin Settings Modal |
 | ---| ---|
- ![fsdaf](./readme/mockups/ticker.png) | ![fsdaf](./readme/mockups/admin_settings.png) | ![fsdaf](./readme/mockups/admin_settings.png) |
+| ![fsdaf](./readme/mockups/ticker.png) | ![fsdaf](./readme/mockups/admin_settings.png) | ![fsdaf](./readme/mockups/admin_settings.png) |
 
 <br><br>
 
