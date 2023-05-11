@@ -9,8 +9,6 @@ import { Chart } from "react-google-charts";
 import UseHttp from '../../hooks/http-request';
 
 const Humidity = () => {
-
-  // get data from database
   const [data, setData] = useState([])
   
   useEffect(() => {
@@ -19,17 +17,16 @@ const Humidity = () => {
       try {
         const response = await UseHttp("user-data", "GET", "", {Authorization: "bearer "+ localStorage.getItem("token")})
         const chartData = response.map((item) => {
-          if(item.name === "temperature") {
+          if(item.name === "humidity") {
             const date = new Date(item.created_at).getHours() + ":" + new Date(item.created_at).getMinutes()
             const value = Number(item.value);
             data.push([date, value]);
           }else {
             return null;
           }
-        }).filter((item) => item !== null); // Filter out the null values
+        }).filter((item) => item !== null); 
         
         setData(data);
-        // console.log(data);
       } catch(error) {
         console.log(error);
       }
@@ -37,7 +34,6 @@ const Humidity = () => {
     
     getData();
   }, []);
-  console.log(data);
 
   return (
     <div className="body">
@@ -49,23 +45,21 @@ const Humidity = () => {
           <Page_Title title="Humidity" subtitle="Greenhouse 1" />
           <div className="graph container">
           <Chart
-              width={'100%'}
-              height={'90vh'}
-              chartType="LineChart"
-              loader={<div>Loading Chart</div>}
-              data= {data}
-              options={{
-                hAxis: {
-                  title: 'Day Time',
-                },
-                vAxis: {
-                  title: 'Temperature( °C)',
-                },
-                curveType:"function",
-                title: 'Temperature over Time',
-              }}
-              rootProps={{ 'data-testid': '1' }}
-            />
+            chartType="ScatterChart"
+            options={{
+              hAxis: {
+                title: 'Time(24h)',
+              },
+              vAxis: {
+                title: 'Humidity(%)',
+              },
+              title: 'Humidity over Time',
+            }}
+            data={[["Date", "Humidity"], ...data]}
+            width="100%"
+            height="60vh"
+            legendToggle
+          />
           </div>
           <div className={styles.plant}>
             <Plant_row />
