@@ -1,4 +1,4 @@
-import { Box, FormControl, InputLabel, Select } from "@mui/material";
+import { Box, FormControl, InputLabel, Select, Tooltip } from "@mui/material";
 import styles from "./general.module.css";
 
 // for pages that has a title ex: Dashboard, Temperature, etc and Greenhouse Number
@@ -7,21 +7,51 @@ export const Page_Title = (props) => {
     <div className={styles.page_title}>
       <h1>{props.title}</h1>
       <div>
-      <FormControl sx={{minWidth: 150, color: "white", backgroundColor:"gray", borderRadius:"4px"  }} disabled>
-        <InputLabel id="demo-simple-select-disabled-label" sx={{ color: "White !important"}}>GreenHouse 1</InputLabel>
-        <Select
-          labelId="demo-simple-select-disabled-label"
-          id="demo-simple-select-disabled"
-          label="GreenHouse 1"
-          sx={{ color: "white", "& .MuiSelect-icon": { color: "white !important" } }}
-        >
-        </Select>
-      </FormControl>
+      <Tooltip title="This is not permitted" arrow>
+        <FormControl sx={{minWidth: 150, color: "white", backgroundColor:"gray", borderRadius:"4px"  }} disabled>
+          <InputLabel id="demo-simple-select-disabled-label" sx={{ color: "White !important"}}>GreenHouse 1</InputLabel>
+          <Select
+            labelId="demo-simple-select-disabled-label"
+            id="demo-simple-select-disabled"
+            label="GreenHouse 1"
+            sx={{ color: "white", "& .MuiSelect-icon": { color: "white !important" } }}
+          >
+          </Select>
+        </FormControl>
+      </Tooltip>
     </div>
     </div>
   );
 };
 
+export const Admin_Page_Title = (props) => {
+  return (
+    <div className={styles.page_title}>
+      <h1>{props.title}</h1>
+    </div>
+  );
+};
+export const Sensors_Page_Title = (props) => {
+  return (
+    <div className={styles.page_title}>
+      <h1>{props.title}</h1>
+      <div>
+      <Tooltip title="This is not permitted" arrow>
+        <FormControl sx={{minWidth: 150, color: "white", backgroundColor:"gray", borderRadius:"4px"  }} disabled>
+          <InputLabel id="demo-simple-select-disabled-label" sx={{ color: "White !important"}}>GreenHouse 1</InputLabel>
+          <Select
+            labelId="demo-simple-select-disabled-label"
+            id="demo-simple-select-disabled"
+            label="GreenHouse 1"
+            sx={{ color: "white", "& .MuiSelect-icon": { color: "white !important" } }}
+          >
+          </Select>
+        </FormControl>
+      </Tooltip>
+    </div>
+    </div>
+  );
+};
 // for containers that has cards or other components
 export const Container_title = (props) => {
   return(

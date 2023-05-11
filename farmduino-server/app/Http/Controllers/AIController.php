@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Orhanerday\OpenAi\OpenAi;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Auth;
+use OpenAI;
+use OpenAI\Client;
+
+$guzzleClient = new \GuzzleHttp\Client(['verify' => false]);
 
 class AIController extends Controller
 {
@@ -15,36 +20,80 @@ class AIController extends Controller
         // get plant name from users table
         $user = auth()->user();
         $plant_name = $user->plant_name;
+        
+        // $open_ai_key = getenv('OPENAI_API_KEY');
+        // $client = OpenAI::client($open_ai_key);
 
-        $open_ai_key = getenv('OPENAI_API_KEY');
-        $open_ai = new OpenAi($open_ai_key);
-        // Get Chat
-        $chat = $open_ai->chat([
-            'model' => 'gpt-3.5-turbo',
-            'messages' => [
-                [
-                    "role" => "system",
-                    "content" => "You are an agricultural engineer, 
-                    what are the temperature, humidity, light intensity 
-                    and soil moisture levels needed for a $plant_name plant to 
-                    grow inside a greenhouse? please be specific.
-                    sample output:
-                    {'ideal_conditions':{'temperature': xx-yy °C, 'humidity': xx-yy %, 
-                    'light intensity': xx-yy lux, 'soil moisture': xx-yy%.},
-                    {'Genus species': 'Genus species'}}
-                    please be straight to the point. and return json format.
-                    send a separate json with the most used genus-species of the plant." 
-                ],
-            ],
-            'temperature' =>0.1,
-            'max_tokens' => 500,
-            'frequency_penalty' => 0,
-            'presence_penalty' => 0,
+        // $result = $client->completions()->create([
+        //     'model' => 'text-davinci-003',
+        //     'prompt' => 'PHP is',
+        // ]);
+        
+        // return $result->choices[0]->text;
+        $yourApiKey = getenv('OPENAI_API_KEY');
+        $client = OpenAI::client($yourApiKey);
+
+        $prompt = "The following is a conversation with an AI assistant. The assistant is  clever and an Agricultural engineer.
+        Human: Hello, who are you?
+        AI: I am an AI created by OpenAI. How can I help you today?
+        Human: I am looking for a plant that can grow in my greenhouse.
+        AI: I can help you with that. What is the name of the plant?
+        Human: ";
+        $prompt .= 'banana';
+        $prompt .= "
+        AI: The plant you are looking for is ";
+        $result = $client->completions()->create([
+            'model' => 'davinci',
+            'prompt' => $prompt,
+            'max_tokens' => 100,
+            'temperature' => 0.1,
+            'top_p' => 1,
+            'n' => 1,
+            'stream' => false,
+            'logprobs' => null,
+            'stop' => ["\n", " Human:", " AI:"],
         ]);
-        $decoded_chat = json_decode($chat);
-        $decoded_chat_content = json_decode($decoded_chat->choices[0]->message->content);
-        // Get Content
-        return $decoded_chat_content;
-    }   
+        return $result->choices[0]->text;
 
+        // $open_ai_key = getenv('OPENAI_API_KEY');
+        // $client = OpenAI::client($open_ai_key);
+        
+        // $messages = 
+        //             "You are an agricultural engineer, 
+        //             what are the temperature, humidity, light intensity 
+        //             and soil moisture levels needed for a $plant_name plant to 
+        //             grow inside a greenhouse? please be specific.
+        //             sample output:
+        //             {'ideal_conditions':{'temperature': xx-yy °C, 'humidity': xx-yy %, 
+        //             'light intensity': xx-yy lux, 'soil moisture': xx-yy%.},
+        //             {'Genus species': 'Genus species'}}
+        //             please be straight to the point. and return json format.
+        //             send a separate json with the most used genus-species of the plant.";
+                
+
+        //     $result = $client->completions()->create([
+        //         'model' => 'davinci',
+        //         'prompt' => $messages,
+        //             'max_tokens' => 100,
+        //             'temperature' => 0.2,
+        //             // 'top_p' => 1,
+        //             // 'n' => 1,
+        //             // 'stream' => false,
+        //             // 'logprobs' => null,
+        //         ]);
+
+        // return $result->choices[0]->text;
+
+//         $response = $client->models()->list();
+
+// $response->object; // 'list'
+
+// foreach ($response->data as $result) {
+//     $result->id; // 'text-davinci-003'
+//     $result->object; // 'model'
+//     // ...
+// }
+
+// $response->toArray(); // ['object' => 'list', 'data' => [...]]
+        }
 }

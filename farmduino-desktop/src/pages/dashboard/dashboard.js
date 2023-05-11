@@ -9,14 +9,27 @@ import Actuators from '../../components/dashboard-components/actuators';
 import UseHttp from '../../hooks/http-request';
 
 const weather_image = process.env.PUBLIC_URL + 'assets/icons/rect65.png';
-const temperature = process.env.PUBLIC_URL + 'assets/icons/temperature.png';
-const humidity = process.env.PUBLIC_URL + 'assets/icons/humidity.png';
-const soil_moisture = process.env.PUBLIC_URL + 'assets/icons/soil_moisture.png';
-const light_intensity = process.env.PUBLIC_URL + 'assets/icons/light_intensity.png';
+const temperature_icon = process.env.PUBLIC_URL + 'assets/icons/temperature.png';
+const humidity_icon = process.env.PUBLIC_URL + 'assets/icons/humidity.png';
+const soil_moisture_icon = process.env.PUBLIC_URL + 'assets/icons/soil_moisture.png';
+const light_intensity_icon = process.env.PUBLIC_URL + 'assets/icons/light_intensity.png';
 
 const Dashboard = () => {
   const [weather, setWeather] = useState([]);
-  const [aiData, setAIData] = useState([]);
+  const [details, setDetails] = useState([]);
+
+  useEffect(() => {
+    const greenhouseDetails = async()=>{
+    try{
+      const details = await UseHttp("user-last-data","GET","",{Authorization: "bearer"+ localStorage.getItem("token")})
+      setDetails(details.data)
+    }catch(error){
+      console.log(error);
+    }
+  }
+  greenhouseDetails();
+  },[])
+
 
   //get date because of a problem in external api used for weather 
   const dates = [];
@@ -30,6 +43,7 @@ const Dashboard = () => {
     });
     dates.push({ date: dateString, weekday: weekday });
   }
+  
   
 
 
@@ -55,10 +69,10 @@ const Dashboard = () => {
           <div className={styles.container1}>
             <Container_title title='Greenhouse Details' />
             <div className={styles.cards_container}>
-              <Mybox styles={styles.mybox} title="Temperature" image_source={temperature} value={'test'} />
-              <Mybox styles={styles.mybox} title="Humidity" image_source={humidity} value="30 C" />
-              <Mybox styles={styles.mybox} title="Soil Moisture" image_source={soil_moisture} value="30 C" />
-              <Mybox styles={styles.mybox} title="Light Intensity" image_source={light_intensity} value="30 C" />
+              <Mybox styles={styles.mybox} title="Temperature" image_source={temperature_icon} value={`${details.temperature} °C`}/>
+              <Mybox styles={styles.mybox} title="Humidity" image_source={humidity_icon} value={`${details.humidity} %`} />
+              <Mybox styles={styles.mybox} title="Soil Moisture" image_source={soil_moisture_icon} value={`${details.soil_moisture} %`} />
+              <Mybox styles={styles.mybox} title="Light Intensity" image_source={light_intensity_icon} value={`${details.light_intensity} lx`} />
             </div>
           </div>
           <div className={styles.container2}>

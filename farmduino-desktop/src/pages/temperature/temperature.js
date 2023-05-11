@@ -1,23 +1,46 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import Sidebar from '../../components/user-sidebar/sidebar';
 import Navbar from '../../components/user-navbar/navbar';
 import Ticker from '../../components/ticker/ticker';
 import { Page_Title } from '../../components/general-components/general';
-import {Plant_row} from '../../components/dashboard-components/plant';
+import { Plant_row } from '../../components/dashboard-components/plant';
 import styles from './temperature.module.css';
 import { Chart } from 'react-google-charts';
+import UseHttp from '../../hooks/http-request';
 
 
 const Temperature = () => {
-  function generateData() {
-    const data = [['X', 'Temperature']];
-    for (let i = 0; i < 10; i++) {
-      const temperature = Math.floor(Math.random() * 20) + 20;
-      data.push([i, temperature]);
-    }
-    return data;
-  }
-  const data = generateData();
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const data = [];
+    const getData = async () => {
+      try {
+        const response = await UseHttp('user-data', 'GET', '', {
+          Authorization: 'bearer ' + localStorage.getItem('token'),
+        });
+        const chartData = response
+          .filter((item) => item.name === 'temperature')
+          .map((item) => {
+            const date = new Date(item.created_at).getHours() + ':' + new Date(item.created_at).getMinutes();
+            const value = Number(item.value);
+            // return [date, value];
+            data.push(date, value);
+          });
+          console.log(chartData);
+          setData(data);
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+    getData();
+  }, []);
+  
+
+  // console.log(test);
+  console.log(data);
   return (
     <div className="body">
       <Sidebar />
@@ -34,12 +57,13 @@ const Temperature = () => {
               data={data}
               options={{
                 hAxis: {
-                  title: 'Day Time',
+                  title: 'Time of Day',
+                  type: 'string',
                 },
                 vAxis: {
-                  title: 'Temperature( °C)',
+                  title: 'Temperature (°C)',
                 },
-                curveType:"function",
+                curveType: 'function',
                 title: 'Temperature over Time',
               }}
               rootProps={{ 'data-testid': '1' }}
@@ -49,11 +73,10 @@ const Temperature = () => {
             <Plant_row />
           </div>
         </div>
-<Ticker />
+        <Ticker />
       </div>
     </div>
   );
 };
 
 export default Temperature;
-

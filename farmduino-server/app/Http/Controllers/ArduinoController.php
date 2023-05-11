@@ -47,9 +47,7 @@ class ArduinoController extends Controller
         ->take(40)
         ->get();
 
-        return response()->json([
-            'data' => $data
-        ], 200);
+        return response()->json($data, 200);
     }
 
  public function userReceiveLastData(){

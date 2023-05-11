@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import Sidebar from '../../components/user-sidebar/sidebar';
 import Navbar from '../../components/user-navbar/navbar';
 import Ticker from '../../components/ticker/ticker';
@@ -12,7 +12,6 @@ const Light_intensity = () => {
       <Sidebar />
       <div className="main_container">
         <Navbar />
-        <Ticker />
         <div className="submain_container">
           <Page_Title title="Light Intensity" subtitle="Greenhouse 1" />
           <div className="graph container"></div>
@@ -20,9 +19,10 @@ const Light_intensity = () => {
             <Plant_row />
           </div>
         </div>
+        <Ticker />
       </div>
     </div>
   );
-}
+};
 
 export default Light_intensity;

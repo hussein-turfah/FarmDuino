@@ -1,12 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AdminSidebar from '../../../components/user-sidebar/admin-sidebar'
 import { Sensors_Page_Title } from '../../../components/general-components/general';
 import Chart from 'react-google-charts';
 import { Plant_row } from '../../../components/dashboard-components/plant';
 import AdminNavbar from '../../../components/user-navbar/admin-navbar';
 import styles from './admin-sensors.module.css'
+import Ticker from '../../../components/ticker/ticker';
+import UseHttp from '../../../hooks/http-request';
 
 const Admin_sensors = () => {
+  // get data from database
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    const data = []
+    const getData = async () => {
+        try{
+        const response = await UseHttp("user-data", "GET","",{Authorization: "bearer"+ localStorage.getItem("token")})
+        const data = await response.json()
+        setData(data)
+      }catch(error){
+        console.log(error)
+      }
+  }
+  getData()
+  }, [])
+
 
   return (
     <div className="body">

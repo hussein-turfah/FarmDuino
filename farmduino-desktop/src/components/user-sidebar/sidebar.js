@@ -15,6 +15,10 @@ const Sidebar = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const signOut = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/login";
+  };
 
 
   return (
@@ -59,14 +63,14 @@ const Sidebar = () => {
           </div>
             <h3 className={styles.links}>Account Settings</h3>
         </Link>
-        <Modal className="modal"
+        <Modal className={styles.modal}
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box className="modal_container">
-          <h2 className={styles.modal_header}>Account Settings</h2>
+        <Box className={styles.modal_container}>
+          <h1 className={styles.modal_header}>Account Settings</h1>
           <div className={styles.fields_container}>
             <TextField id="outlined-basic" label="Change Email Address" variant="outlined" />
             <TextField id="outlined-basic" label="Old Password" variant="outlined" />
@@ -76,7 +80,7 @@ const Sidebar = () => {
             <Button variant="outlined" sx={{background: '#65BEFF', height: '100%', width: '40%', padding: '3%', color: 'white',":hover": {borderColor: '#9747FF', backgroundColor:"#9747FF" }}}>
               Save Changes
             </Button>
-            <Button variant="outlined" sx={{background: '#9747FF', height: '100%', width: '40%', padding: '3%', color: 'white',":hover": {borderColor: '#65BEFF', backgroundColor:"red" }}}>
+            <Button variant="outlined" onClick={signOut} sx={{background: '#9747FF', height: '100%', width: '40%', padding: '3%', color: 'white',":hover": {borderColor: '#65BEFF', backgroundColor:"red" }}}>
               logout
             </Button>
           </div>

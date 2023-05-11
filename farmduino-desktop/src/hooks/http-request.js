@@ -1,6 +1,6 @@
 const UseHttp =  async (url, method = "GET", body = "", header = {}) => {
     let data;
-    const URL = "http://192.168.0.111:8000/api/v1.0.0/";
+    const URL = "http://192.168.0.104:8000/api/v1.0.0/";
     try {
         const Response = await fetch(URL+url,{
             method : method,

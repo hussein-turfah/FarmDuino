@@ -15,7 +15,6 @@ const Login = () => {
   const saveToken = async () => {
     const email = email_ref.current.value;
     const password = password_ref.current.value;
-    console.log(email, password)
     
     const form_data = new FormData();
 

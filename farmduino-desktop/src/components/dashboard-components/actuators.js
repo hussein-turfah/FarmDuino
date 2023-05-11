@@ -20,7 +20,7 @@ const Actuators = (props) => {
   
   const  handleFansSwitchChange = async () => {
     setFansSwitchState(!fansSwitchState);
-    if (fansSwitchState === false) {
+    if (fansSwitchState == true) {
       ArduinoSend("/fan_on");
     }else{
       ArduinoSend("/fan_off");
