@@ -85,9 +85,9 @@
 
 
 ### Admin Screens (Desktop & Web)
-|  Landing Screen | Settings Modal | Notifications Modal |
+|  Landing Screen | Settings Modal | Ticker Modal |
 | ---| ---| ---|
-| ![Landing](./readme/app/users.png) | ![fsdaf](./readme/app/settings.png) | ![fsdaf](./readme/app/notifications.png) |
+| ![Landing](./readme/app/users.png) | ![fsdaf](./readme/app/settings.png) | ![fsdaf](./readme/app/ticker.png) |
 
 <br><br>
 
