@@ -25,6 +25,7 @@ const AdminSidebar = () => {
 
   const signOut = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("is_admin");
     window.location.href = "/login";
   };
 
