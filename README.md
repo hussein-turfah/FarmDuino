@@ -42,9 +42,17 @@
 > We designed FarmDuino using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
 
 ### Wireframes
-| Login screen  | Register screen |  Landing screen | Sensors screen | Account Settings Modal | Admin Main Screen | Insert to Ticker Modal | Admin Settings Modal |
+| Login screen  | Register screen |  Landing screen | 
 | ---| ---| ---|
-| ![Landing](./readme/wireframes/login.png) | ![fsdaf](./readme/wireframes/register.png) | ![fsdaf](./readme/wireframes/main.png) | ![fsdaf](./readme/wireframes/sensors.png) | ![fsdaf](./readme/wireframes/account_settings.png) | ![fsdaf](./readme/wireframes/users.png) | ![fsdaf](./readme/wireframes/ticker.png) | ![fsdaf](./readme/wireframes/admin_settings.png) |
+| ![Landing](./readme/wireframes/login.png) | ![fsdaf](./readme/wireframes/register.png) | ![fsdaf](./readme/wireframes/main.png) | 
+
+| Sensors screen | Account Settings Modal | Admin Main Screen |
+| ---| ---| ---|
+![fsdaf](./readme/wireframes/sensors.png) | ![fsdaf](./readme/wireframes/account_settings.png) | ![fsdaf](./readme/wireframes/users.png) |
+
+| Insert to Ticker Modal | Admin Settings Modal |
+| ---| ---|
+| ![fsdaf](./readme/wireframes/ticker.png) | ![fsdaf](./readme/wireframes/admin_settings.png) |
 
 ### Mockups
 | Login screen  | Register screen |  Landing screen | Sensors screen | Account Settings Modal | Notifications Modal | Admin Main Screen | Insert to Ticker Modal | Admin Settings Modal |
