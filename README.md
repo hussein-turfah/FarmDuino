@@ -64,7 +64,7 @@
 | ![fsdaf](./readme/mockups/sensors.png) | ![fsdaf](./readme/mockups/settings.png) | ![fsdaf](./readme/mockups/notifications.png) | ![fsdaf](./readme/mockups/users.png) |
 
 | Admin Main Screen | Insert to Ticker Modal | Admin Settings Modal |
-| ---| ---|
+| ---| ---| ---|
 | ![fsdaf](./readme/mockups/ticker.png) | ![fsdaf](./readme/mockups/admin_settings.png) | ![fsdaf](./readme/mockups/admin_settings.png) |
 
 <br><br>
@@ -85,7 +85,7 @@
 
 
 ### Admin Screens (Desktop & Web)
- |  Landing screen | Settings Modal | Notifications Modal |
+|  Landing Screen | Settings Modal | Notifications Modal |
 | ---| ---| ---|
 | ![Landing](./readme/app/users.png) | ![fsdaf](./readme/app/settings.png) | ![fsdaf](./readme/app/notifications.png) |
 
