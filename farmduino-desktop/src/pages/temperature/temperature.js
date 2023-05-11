@@ -10,37 +10,32 @@ import UseHttp from '../../hooks/http-request';
 
 
 const Temperature = () => {
-  const [data, setData] = useState([]);
-
+  const [data, setData] = useState([])
+  
   useEffect(() => {
-    const data = [];
+    const data = []
     const getData = async () => {
       try {
-        const response = await UseHttp('user-data', 'GET', '', {
-          Authorization: 'bearer ' + localStorage.getItem('token'),
-        });
-        const chartData = response
-          .filter((item) => item.name === 'temperature')
-          .map((item) => {
-            const date = new Date(item.created_at).getHours() + ':' + new Date(item.created_at).getMinutes();
+        const response = await UseHttp("user-data", "GET", "", {Authorization: "bearer "+ localStorage.getItem("token")})
+        const chartData = response.map((item) => {
+          if(item.name === "temperature") {
+            const date = new Date(item.created_at).getHours() + ":" + new Date(item.created_at).getMinutes()
             const value = Number(item.value);
-            // return [date, value];
-            data.push(date, value);
-          });
-          console.log(chartData);
-          setData(data);
-          console.log(data);
-        } catch (error) {
-          console.log(error);
-        }
-      };
-
+            data.push([date, value]);
+          }else {
+            return null;
+          }
+        }).filter((item) => item !== null); 
+        
+        setData(data);
+      } catch(error) {
+        console.log(error);
+      }
+    };
+    
     getData();
   }, []);
   
-
-  // console.log(test);
-  console.log(data);
   return (
     <div className="body">
       <Sidebar />
@@ -49,25 +44,22 @@ const Temperature = () => {
         <div className="submain_container">
           <Page_Title title="Temperature" subtitle="Greenhouse 1" />
           <div className="graph container">
-            <Chart
-              width={'100%'}
-              height={'90vh'}
-              chartType="LineChart"
-              loader={<div>Loading Chart</div>}
-              data={data}
-              options={{
-                hAxis: {
-                  title: 'Time of Day',
-                  type: 'string',
-                },
-                vAxis: {
-                  title: 'Temperature (°C)',
-                },
-                curveType: 'function',
-                title: 'Temperature over Time',
-              }}
-              rootProps={{ 'data-testid': '1' }}
-            />
+          <Chart
+            chartType="LineChart"
+            options={{
+              hAxis: {
+                title: 'Time(24h)',
+              },
+              vAxis: {
+                title: 'Temperature(°C)',
+              },
+              title: 'Temperature over Time',
+            }}
+            data={[["Date", "Temperature"], ...data]}
+            width="100%"
+            height="60vh"
+            legendToggle
+          />
           </div>
           <div className={styles.plant}>
             <Plant_row />
