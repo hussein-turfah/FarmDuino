@@ -30,11 +30,10 @@ const Navbar = () => {
 
   return (
       <div className={styles.main_container}>
-          <a href="/admin-dashboard" className={styles.logo_container}>
             <h3 className={styles.name}>
               Hussein Turfah
             </h3>
-        </a>
+        
         <Link className={styles.logo_container} onClick={handleOpen}>
           <Badge badgeContent={notifications.length} color="error">
             <img src={notifications_icon} alt="logo" className={styles.logo} />
