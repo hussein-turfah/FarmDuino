@@ -94,45 +94,64 @@
 <!-- Tech stack -->
 <img src="./readme/title5.svg"/>
 
-###  Coffee Express is built using the following technologies:
+###  FarmDuino is built using the following technologies:
 
-- This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on mobile, desktop, and the web.
-- For persistent storage (database), the app uses the [Hive](https://hivedb.dev/) package which allows the app to create a custom storage schema and save it to a local database.
-- To send local push notifications, the app uses the [flutter_local_notifications](https://pub.dev/packages/flutter_local_notifications) package which supports Android, iOS, and macOS.
-  - 🚨 Currently, notifications aren't working on macOS. This is a known issue that we are working to resolve!
-- The app uses the font ["Work Sans"](https://fonts.google.com/specimen/Work+Sans) as its main font, and the design of the app adheres to the material design guidelines.
+- The project uses [Arduino](https://www.arduino.cc/), a microcontroller platform, to collect and process data from various sensors installed in the farm.
+- The frontend of the application is built using [React JS](https://react.dev/), a popular JavaScript library for building user interfaces.
+- [Electron JS](https://www.electronjs.org/) is used to develop a desktop application that can be installed and used on different operating systems.
+- [Laravel](https://laravel.com/) is used to develop the backend of the application. Laravel is a PHP framework that allows us to build web applications quickly and efficiently.
+- [Roboto](https://fonts.google.com/specimen/Roboto) font is used as the main font throughout the application.
 
 <br><br>
 
 <!-- How to run -->
 <img src="./readme/title6.svg"/>
 
-> To set up Coffee Express locally, follow these steps:
+> To set up FarmDuino locally, follow these steps:
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Make sure you have the following installed on your computer:
+
+   - Node.js
+   - npm (Node Package Manager)
+
+Clone the repository by running the folowing command in your terminal:
+
+```sh
 * npm
   ```sh
-  npm install npm@latest -g
+  https://github.com/Hussein-Turfah/FarmDuino.git
   ```
+
 
 ### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a free API Key at [OPENAI](https://openai.com/blog/openai-api) and at [Open Weather Map](https://openweathermap.org/api)
 2. Clone the repo
    ```sh
    git clone https://github.com/your_username_/Project-Name.git
    ```
-3. Install NPM packages
+3. Install NPM packages inside the `desktop` folder
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+4. Install Composer packages inside the `server` folder
+   ```sh
+   composer install
+   ```
+5. Migrate the database from inside the `server` folder 
+   ```sh
+   php artisan migrate
+   ```
+6. Enter your API in `.example.env` and rename it to `.env`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   OPENAI_API_KEY = 'ENTER YOUR API'
+   WEATHER_API_KEY='ENTER YOUR API'
+   TREFLE_API_KEY = 'ENTER YOUR API';
+   ```
    ```
 
-Now, you should be able to run Coffee Express locally and explore its features.
+Now, you should be able to run FarmDuino locally and explore its features 🤩.
