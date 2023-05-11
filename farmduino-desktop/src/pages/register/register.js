@@ -43,7 +43,7 @@ const Register = () => {
 
     const data = await UseHttp("register","POST",form_data)
 
-    if (data.success) navigate("/login")
+    if (data.success) navigate("*")
   }
   
 
@@ -70,7 +70,7 @@ const Register = () => {
           <div className={styles.button}>
             <Button variant='outlined' sx={{background:'#9747FF',height:'100%',width:'100%', padding: '4%', color:'white',":hover":{color:'black',borderColor:'#9747FF'}}} onClick={sendData}>Register</Button>
           </div>
-            <p className={styles.p}>Already have an account? <a href="/login">Login</a></p>
+            <p className={styles.p}>Already have an account? <a href="*">Login</a></p>
         </div>
       </div>
     </div>
