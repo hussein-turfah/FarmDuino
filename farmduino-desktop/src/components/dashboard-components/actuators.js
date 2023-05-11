@@ -20,14 +20,23 @@ const Actuators = (props) => {
   
   const  handleFansSwitchChange = async () => {
     setFansSwitchState(!fansSwitchState);
-    if (fansSwitchState == true) {
-      ArduinoSend("/fan_on");
-    }else{
+    if (fansSwitchState === true) {
       ArduinoSend("/fan_off");
+      console.log("fan on");
+    }else if (fansSwitchState === false){
+      ArduinoSend("/fan_on");
+      console.log("fan off");
     }
   };
-  const handleLightsSwitchChange = () => {
+  const handleLightsSwitchChange = async () => {
     setLightsSwitchState(!lightsSwitchState);
+    if (lightsSwitchState === true) {
+      ArduinoSend("/light_off");
+      console.log("light on");
+    }else if (lightsSwitchState === false){
+      ArduinoSend("/light_on");
+      console.log("light off");
+    }
   };
   const handleTempSliderChange = (event, newValue) => {
     setTempSliderValue(newValue);
