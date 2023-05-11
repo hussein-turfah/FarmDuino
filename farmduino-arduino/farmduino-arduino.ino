@@ -5,6 +5,7 @@
 #define DHT_PIN 2
 #define DHT_TYPE DHT22
 #define fan_pin 4
+#define light_pin 6
 EthernetServer server(80);
 
 DHT dht(DHT_PIN, DHT_TYPE);
@@ -36,7 +37,7 @@ void readSoilMoisture() {
 
 
 void sendData(String data, IPAddress arduino_ip) {
-  if (client.connect("192.168.0.111", 8000)) { //server ip & port
+  if (client.connect("192.168.0.104", 8000)) { //server ip & port
     client.println("POST /api/v1.0.0/data HTTP/1.1");
     client.println("Host: " + arduino_ip); //arduino ip
     client.println("Connection: close");
@@ -56,6 +57,7 @@ void setup() {
   Ethernet.begin(mac);
   dht.begin();
   pinMode(fan_pin, OUTPUT);
+  pinMode(light_pin, OUTPUT);
   doc["light_intensity"] = light_intensity;
 }
 
@@ -66,8 +68,9 @@ void loop() {
   String json_data;
   serializeJson(doc, json_data);
   IPAddress ip = Ethernet.localIP();
+  Serial.println(ip);
   sendData(json_data, ip);
-
+  delay(5000);
   // for hosting a server
   EthernetClient client = server.available();
   if (client) {
@@ -78,11 +81,15 @@ void loop() {
         if (request.indexOf("/fan_on") != -1) {
           digitalWrite(fan_pin, HIGH);
         } else if (request.indexOf("/fan_off") != -1) {
-          digitalWrite(fan_pin, LOW);
+          digitalWrite(fan_pin, LOW); 
+        } else if (request.indexOf("/light_on") != -1) {
+          digitalWrite(light_pin, HIGH);
+        }else if (request.indexOf("/light_off") != -1) {
+          digitalWrite(light_pin, LOW);
         }
       }
       client.stop();
     }
-    delay(3000);
+    delay(2000);
   }
 }
