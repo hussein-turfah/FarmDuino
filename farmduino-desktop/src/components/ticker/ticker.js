@@ -12,7 +12,7 @@ const Ticker = () => {
       try {
         const ticker = await UseHttp("ticker-elements", "GET", "",{Authorization: "bearer " + localStorage.getItem("token")})
         for(let i=0;i < ticker.length;i++){
-          data.push(ticker[i]['product_name'] + " : " + ticker[i]['price'] + " $")  
+          data.push(ticker[i]['product_name'] + " : " + "$/ kg " + ticker[i]['price'] )  
         }
         setTicker(data);
       } catch (error) {
