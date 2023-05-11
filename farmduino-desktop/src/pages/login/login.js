@@ -22,10 +22,15 @@ const Login = () => {
     form_data.append("password", password);
 
     const data = await UseHttp("login", "POST",form_data);
-    if(data.user) {
+    if(data.user.is_admin==0) {
       localStorage.setItem('token', data.token);
       navigate("/dashboard")
+    }else if(data.user.is_admin==1) {
+      navigate("/admin-dashboard")
+      localStorage.setItem('is_admin', data.user.is_admin)
+      localStorage.setItem('token', data.token); 
     }
+    
   }
   return (
     <div className={styles.body}>
