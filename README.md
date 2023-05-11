@@ -113,16 +113,11 @@
 
 Make sure you have the following installed on your computer:
 
-   - Node.js
+   - Composer
    - npm (Node Package Manager)
-
-Clone the repository by running the folowing command in your terminal:
-
-```sh
-* npm
-  ```sh
-  https://github.com/Hussein-Turfah/FarmDuino.git
-  ```
+   - PHP
+   - MySQL
+   - Node.js
 
 
 ### Installation
@@ -132,7 +127,7 @@ _Below is an example of how you can instruct your audience on installing and set
 1. Get a free API Key at [OPENAI](https://openai.com/blog/openai-api) and at [Open Weather Map](https://openweathermap.org/api)
 2. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone   https://github.com/Hussein-Turfah/FarmDuino.git
    ```
 3. Install NPM packages inside the `desktop` folder
    ```sh
@@ -151,7 +146,6 @@ _Below is an example of how you can instruct your audience on installing and set
    OPENAI_API_KEY = 'ENTER YOUR API'
    WEATHER_API_KEY='ENTER YOUR API'
    TREFLE_API_KEY = 'ENTER YOUR API';
-   ```
    ```
 
 Now, you should be able to run FarmDuino locally and explore its features 🤩.
