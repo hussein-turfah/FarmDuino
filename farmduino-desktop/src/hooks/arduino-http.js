@@ -1,8 +1,8 @@
-const ArduinoSend = async (url, method = "POST", body = "", header = {}) =>{
+const ArduinoSend = async (url, method = "GET", body = "", header = {}) =>{
 
-  const URL = "http://192.168.0.111:80/";
+  const URL = "http://192.168.0.112:80/";
   try {
-      const Response = await fetch(URL+url,{
+      const Response =  fetch(URL+url,{
           method : method,
           headers: header,
           body: !!body ? body : null  
