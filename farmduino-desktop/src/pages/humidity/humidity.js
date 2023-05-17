@@ -10,6 +10,8 @@ import UseHttp from '../../hooks/http-request';
 
 const Humidity = () => {
   const [data, setData] = useState([])
+  const [aiData, setAiData] = useState([])
+
   
   useEffect(() => {
     const data = []
@@ -35,12 +37,28 @@ const Humidity = () => {
     getData();
   }, []);
 
+  // get Ai data from GPT-3.5 in backend (AIController)
+  useEffect(() => {
+    const data_array = []
+    const getAIData = async () => {
+      try {
+        const ai_data = await UseHttp("ai","GET","",{Authorization: "bearer "+ localStorage.getItem("token")})
+        data_array.push(ai_data.Genus_species)
+        data_array.push(ai_data.ideal_conditions.humidity)
+        data_array.push(ai_data.sentences.humidity)
+        setAiData(data_array)
+      } catch(error) {
+        console.log(error);
+      }
+    };
+    getAIData();
+  }, []);
+
   return (
     <div className="body">
       <Sidebar />
       <div className="main_container">
         <Navbar />
-        <Ticker />
         <div className="submain_container">
           <Page_Title title="Humidity" subtitle="Greenhouse 1" />
           <div className="graph container">
@@ -62,9 +80,15 @@ const Humidity = () => {
           />
           </div>
           <div className={styles.plant}>
-            <Plant_row />
+          <Plant_row
+              genus_species = {aiData[0]}
+              condition_title='Ideal Humidity'
+              condition={aiData[1]}              
+              sentence={aiData[2]}
+            />
           </div>
         </div>
+        <Ticker />
       </div>
     </div>
   );
