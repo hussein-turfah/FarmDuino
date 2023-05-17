@@ -15,7 +15,7 @@ class LogController extends Controller
     }
 
     public function listUserLogs(){
-        $logs = Log::where('greenhouses_users_id', auth()->user()->id)->get();
+        $logs = Log::where('greenhouses_users_id', auth()->user()->id)->orderBy('id', 'desc')->get();
         return response()->json($logs, 200);
     }
 }
