@@ -10,6 +10,9 @@ import UseHttp from '../../hooks/http-request';
 
 const Soil_moisture = () => {
   const [data, setData] = useState([])
+  const [aiData, setAiData] = useState([])
+
+  // get graph data from database
   useEffect(() => {
     const data = []
     const getData = async () => {
@@ -33,12 +36,30 @@ const Soil_moisture = () => {
     
     getData();
   }, []);
+
+
+  // get Ai data from GPT-3.5 in backend (AIController)
+  useEffect(() => {
+    const data_array = []
+    const getAIData = async () => {
+      try {
+        const ai_data = await UseHttp("ai","GET","",{Authorization: "bearer "+ localStorage.getItem("token")})
+        data_array.push(ai_data.Genus_species)
+        data_array.push(ai_data.ideal_conditions.soil_moisture)
+        data_array.push(ai_data.sentences.soil_moisture)
+        setAiData(data_array)
+      } catch(error) {
+        console.log(error);
+      }
+    };
+    getAIData();
+  }, []);
+
   return (
     <div className="body">
       <Sidebar />
       <div className="main_container">
         <Navbar />
-        <Ticker />
         <div className="submain_container">
           <Page_Title title="Soil Moisture" subtitle="Greenhouse 1" />
           <div className="graph container">
@@ -60,9 +81,15 @@ const Soil_moisture = () => {
           />
           </div>
           <div className={styles.plant}>
-            <Plant_row />
+          <Plant_row
+              genus_species = {aiData[0]}
+              condition_title='Ideal Soil Moisture'
+              condition={aiData[1]}              
+              sentence={aiData[2]}
+            />
           </div>
         </div>
+        <Ticker />
       </div>
     </div>
   );
