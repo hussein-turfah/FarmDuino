@@ -93,7 +93,7 @@ const Dashboard = () => {
                     humidity={"Humidity"}
                     humidity_value={`${day.humidity}%`}
                     description={"Description"}
-                    desc_value={day.description.charAt(0).toUpperCase() + day.description.slice(1)}                    humidity={`Humidity: ${day.humidity}%`}
+                    desc_value={day.description.charAt(0).toUpperCase() + day.description.slice(1)}                    
                     wind_speed={"Wind speed"}
                     wind_speed_value={`${day.wind_speed}Km/h`}
                     />
