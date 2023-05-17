@@ -1,5 +1,6 @@
 import { TextField, Button } from "@mui/material";
 import styles from "./forgot-password.module.css";
+const image = "../../assets/images/colored_logo.svg";
 
 const forgot_password_image = process.env.PUBLIC_URL + '/assets/images/forgot-password.jpg';
 
@@ -10,6 +11,7 @@ const ForgotPassword = () => {
         <img src={forgot_password_image} alt="ForgotPassword" className={styles.image} />
       </div>
       <div className={styles.main_container}>
+        <img src={image} alt="logo" className={styles.logo} />
         <h1 className={styles.h1}>Forgot Password</h1>
         <div className={styles.submain_container}>
           <div className={styles.textfield_container}>
