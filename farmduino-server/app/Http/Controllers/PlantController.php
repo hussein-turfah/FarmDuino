@@ -32,9 +32,8 @@ class PlantController extends Controller
     public function getPlantGenusSpecies(){
         $AI_Controller = new AIController(); 
         $query= $AI_Controller->askAI();
-        // we use -> to access objects, and we use {''} to access 
-        // property names that have spaces in them or special characters
-        $genus_species = $query-> most_used_genus_species ->{'Genus species'}; 
-        return($genus_species);
+        
+        $query = json_decode($query);
+        return $query->Genus_species;
     }
 }
