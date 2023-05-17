@@ -11,7 +11,9 @@ import UseHttp from '../../hooks/http-request';
 
 const Temperature = () => {
   const [data, setData] = useState([])
+  const [aiData, setAiData] = useState([])
   
+  // get graph data from database
   useEffect(() => {
     const data = []
     const getData = async () => {
@@ -35,7 +37,24 @@ const Temperature = () => {
     
     getData();
   }, []);
-  
+
+  // get Ai data from GPT-3.5 in backend (AIController)
+  useEffect(() => {
+    const data_array = []
+    const getAIData = async () => {
+      try {
+        const ai_data = await UseHttp("ai","GET","",{Authorization: "bearer "+ localStorage.getItem("token")})
+        data_array.push(ai_data.Genus_species)
+        data_array.push(ai_data.ideal_conditions.temperature)
+        data_array.push(ai_data.sentences.temperature)
+        setAiData(data_array)
+      } catch(error) {
+        console.log(error);
+      }
+    };
+    getAIData();
+  }, []);
+
   return (
     <div className="body">
       <Sidebar />
@@ -62,7 +81,12 @@ const Temperature = () => {
           />
           </div>
           <div className={styles.plant}>
-            <Plant_row />
+            <Plant_row
+              genus_species = {aiData[0]}
+              condition_title='Ideal Temperature'
+              condition={aiData[1]}              
+              sentence={aiData[2]}
+            />
           </div>
         </div>
         <Ticker />
