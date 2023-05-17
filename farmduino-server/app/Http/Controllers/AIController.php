@@ -33,8 +33,8 @@ class AIController extends Controller
                         You are an Agricultural Engineer.        
                         sample output for $plant_name:
                         {'ideal_conditions':{'temperature': x-y °C, 'humidity': x-y %, 
-                        'light intensity': x-y lux, 'soil moisture': x-y%.},
-                        {'Genus species': 'Genus species'},
+                        'light_intensity': x-y lux, 'soil_moisture': x-y%.},
+                        {'Genus_species': 'Genus species'},
                         {'sentences': {
                             temperature: 'one sentence about temperature',
                             humidity: 'one sentence about humidity',
