@@ -5,34 +5,30 @@
 <!-- project philosophy -->
 <img src="./readme/title2.svg"/>
 
-> A Desktop app for controlling farming environment, making it easier for greenhouse owners to change their greenhouse environment easily.
->
-> FarmDuino is a smart farming solution that aims to streamline the agricultural process by providing a user-friendly platform for farmers to monitor and manage their crops. Our goal is to enhance the farming experience by saving time and improving crop yield.
+> FarmDuino is a desktop application designed to revolutionize greenhouse farming by providing an intuitive and efficient solution for controlling the farming environment.
+> 
+> Our goal is to empower greenhouse owners to easily manage and customize their greenhouse conditions, leading to improved crop yields and optimized farming processes.
 
 ### User Stories
-- As a greenhouse owner, I want to register an account so that I can log my data under my email address.
-- As a greenhouse owner, I want to login to my account so that I can control my greenhouses and view my data.
--	As a user, I want to be able to log out of my account so that I can ensure the security of my information and prevent unauthorized access.
-- As a greenhouse owner, I want to be able to reset my password so that I’ll be able to access my account if I forgot the password.
-- As a greenhouse owner, I want to be able to change my email address, so that I can update my contact information and receive important notifications on my new email address.
-- As a greenhouse owner, I want to change my password, so that I can ensure the security of my account.
-- As a greenhouse owner, I want to remotely monitor real-time temperature and humidity levels in my greenhouse, so that I can ensure the optimal growth conditions for my crops are being maintained.
-- As a greenhouse owner, I want to remotely monitor soil moisture levels in my greenhouse, so that I can conserve water and reduce costs by watering my crops only when necessary.
-- As a greenhouse owner, I want to monitor the light levels in my greenhouse so that I can ensure my crops are receiving the appropriate amount of light for optimal growth.
-- As a greenhouse owner, I want to customize the triggering system of the actuators according to my crop’s needs in terms of temperature, humidity, light intensity, and soil moisture levels so that I can ensure optimal growth conditions for my crops.
-- As a greenhouse owner, I want to receive real-time alerts when any sensor malfunctions, so that I can quickly identify and resolve any problems that arise.
-- As a greenhouse owner, I want to remotely control devices in my greenhouse, such as turning on or off fans, heaters, or lights, so that I can ensure optimal growing conditions for my crops even when I am not on-site.
-- As a greenhouse owner, I want to check previously triggered notifications so that I can know if anything happened during my rest hours.
-- As a greenhouse owner, I want to check levels of temperature, humidity, light intensity, and soil moisture recommended for my crops so that I can make the actuators function accordingly. 
-- As a greenhouse owner, I want to check the weather forecast on each greenhouse location so that I can plan for my actuator schedules ahead.
-- As a greenhouse owner, I want to check the prices of different fruits and vegetables in the market so that I can know when I can get good selling prices.
-- As an admin, I want to login to my account so that I can control the greenhouses and access my data.
-- As an admin, I want to be able to change my email address, so that I can update my contact information.
-- As an admin, I want to change my password, so that I can ensure the security of my account.
-- As an admin, I want to view a list of the users along with their planted crops so that I can conduct studies on crops the Arduinos are being used for.
-- As an admin, I want to check the prices of different fruits and vegetables in the market so that I can conduct studies of different purposes.
--	As an admin, I want to add market prices of different fruits and vegetables to a ticker so that I can show them to greenhouse owners.
 
+- As a user, I want to monitor market prices for vegetables and fruits so that I can maximize profits.
+- As a user, I want to log out of my account so that I can ensure the security of my account information.
+- As a user, I want to change my email address so that I can update my contact information.
+- As a user, I want to change my password so that I can enhance the security of my account.
+- As a user, I want to reset my password so that I can regain access to my account if I forget it.
+ 
+### Greenhouse Owner Stories
+
+- As a greenhouse owner, I want to remotely monitor and customize actuators based on environmental factors so that I can optimize crop growth conditions.
+- As a greenhouse owner, I want access to recommended environmental thresholds for my crops to configure the actuators and provide ideal conditions.
+- As a greenhouse owner, I want to graphically visualize the historical data of environmental conditions, so that I can analyze trends and patterns in past occurrences.
+- As a greenhouse owner, I want to check weather forecasts for my greenhouse location so that I can plan actuator schedules and adapt to upcoming weather conditions.
+- As a greenhouse owner, I want to review past notifications so that I can stay informed about greenhouse incidents and changes during my absence.
+
+### Admin Stories
+
+- As an admin, I want to access a list of users and their planted crops so that I can conduct studies and researches.
+- As an admin, I want to update the ticker with market prices of fruits and vegetables so that greenhouse owners can view them.
 
 <br><br>
 
