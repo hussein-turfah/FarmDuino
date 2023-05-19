@@ -38,30 +38,14 @@
 > We designed FarmDuino using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
 
 ### Wireframes
-| Login screen  | Register screen |  Landing screen | 
-| ---| ---| ---|
-| ![Landing](./readme/wireframes/login.png) | ![fsdaf](./readme/wireframes/register.png) | ![fsdaf](./readme/wireframes/main.png) | 
-
-| Sensors screen | Account Settings Modal | Admin Main Screen |
-| ---| ---| ---|
-![fsdaf](./readme/wireframes/sensors.png) | ![fsdaf](./readme/wireframes/account_settings.png) | ![fsdaf](./readme/wireframes/users.png) |
-
-| Insert to Ticker Modal | Admin Settings Modal |
-| ---| ---|
-| ![fsdaf](./readme/wireframes/ticker.png) | ![fsdaf](./readme/wireframes/admin_settings.png) |
+| Login screen | Landing screen | Sensors screen | Admin Main Screen | Account Settings modal |
+| ---| ---| ---| ---| ---|
+| ![Landing](./readme/wireframes/login.png) | ![fsdaf](./readme/wireframes/main.png) | ![fsdaf](./readme/wireframes/sensors.png) | ![fsdaf](./readme/wireframes/users.png) | ![fsdaf](./readme/wireframes/account_settings.png) |
 
 ### Mockups
-| Login screen  | Register screen |  Landing screen | 
-| ---| ---| ---|
-| ![Landing](./readme/mockups/login.png) | ![fsdaf](./readme/mockups/register.png) | ![fsdaf](./readme/mockups/main.png) | 
-
-| Sensors screen | Account Settings Modal | Notifications Modal |
-| ---| ---| ---|  
-| ![fsdaf](./readme/mockups/sensors.png) | ![fsdaf](./readme/mockups/settings.png) | ![fsdaf](./readme/mockups/notifications.png) | ![fsdaf](./readme/mockups/users.png) |
-
-| Admin Main Screen | Insert to Ticker Modal | Admin Settings Modal |
-| ---| ---| ---|
-| ![fsdaf](./readme/mockups/ticker.png) | ![fsdaf](./readme/mockups/admin_settings.png) | ![fsdaf](./readme/mockups/admin_settings.png) |
+| Login screen  | Landing screen | Sensors screen | Admin Main Screen | Account Settings Modal | 
+| ---| ---| ---| ---| ---| ---| ---|
+| ![Landing](./readme/mockups/login.png) | ![fsdaf](./readme/mockups/main.png) | ![fsdaf](./readme/mockups/sensors.png) | ![fsdaf](./readme/mockups/users.png) | ![fsdaf](./readme/mockups/settings.png) |
 
 <br><br>
 
@@ -70,20 +54,24 @@
 
 > Using the wireframes and mockups as a guide, we implemented the FarmDuino app with the following features:
 
-### User Screens (Desktop & Web)
-| Login screen  | Register screen | Landing screen |  Landing Screen | 
-| ---| ---|  ---| ---|
-| ![Landing](./readme/app/login.png) | ![fsdaf](./readme/app/register.png) | ![fsdaf](./readme/app/main.png) | ![fsdaf](./readme/app/main2.png) |
+### Greenhouse Owner Screens (Desktop & Web)
+| Register page | Login page | Forgot Password page |
+| ---| ---|  ---| 
+| ![Landing](./readme/app/register.gif) | ![fsdaf](./readme/app/login.gif) | ![fsdaf](./readme/app/reset-password.gif)
 
-| Sensors screen | Sensors screen | Account Settings Modal | Notifications Modal | 
+| Dashboard page | Account Settings modal | Temperature page | 
+| ---| ---| ---| 
+| ![Landing](./readme/app/dashboard.gif) | ![fsdaf](./readme/app/user-settings.gif) | ![fsdaf](./readme/app/temperature.gif) |  
+
+| Soil Moisture page | Humidity page |Light Intensity page | Notifications Modal | 
 | ---| ---| ---| ---|
-| ![fsdaf](./readme/app/sensors.png) | ![fsdaf](./readme/app/sensors2.png) | ![fsdaf](./readme/app/settings.png) | ![fsdaf](./readme/app/notifications.png) |
+| ![fsdaf](./readme/app/soil-moisture.gif) | ![fsdaf](./readme/app/humidity.gif) | ![fsdaf](./readme/app/light-intensity.gif) | ![fsdaf](./readme/app/notifications.gif) |
 
 
 ### Admin Screens (Desktop & Web)
-|  Landing Screen | Settings Modal | Ticker Modal |
-| ---| ---| ---|
-| ![Landing](./readme/app/users.png) | ![fsdaf](./readme/app/settings.png) | ![fsdaf](./readme/app/ticker.png) |
+|  Login page (Same as User Login page) | Admin Dashboard | Insert Prices modal | Admin Settings Modal |
+| ---| ---| ---| ---|
+| ![Landing](./readme/app/admin-login.gif) | ![fsdaf](./readme/app/users.gif) | ![fsdaf](./readme/app/ticker.gif) | ![fsdaf](./readme/app/admin-settings.gif) |
 
 <br><br>
 
@@ -92,11 +80,11 @@
 
 ###  FarmDuino is built using the following technologies:
 
-- The project uses [Arduino](https://www.arduino.cc/), a microcontroller platform, to collect and process data from various sensors installed in the farm.
-- The frontend of the application is built using [React JS](https://react.dev/), a popular JavaScript library for building user interfaces.
-- [Electron JS](https://www.electronjs.org/) is used to develop a desktop application that can be installed and used on different operating systems.
-- [Laravel](https://laravel.com/) is used to develop the backend of the application. Laravel is a PHP framework that allows us to build web applications quickly and efficiently.
-- [Roboto](https://fonts.google.com/specimen/Roboto) font is used as the main font throughout the application.
+- The project utilizes [Arduino](https://www.arduino.cc/), a versatile microcontroller platform, to collect and analyze data from various farm sensors and control interconnected actuators.
+- The project's backend utilizes the power of [Laravel](https://laravel.com/), a robust PHP framework renowned for its rapid and efficient web application development capabilities. 
+- The application's frontend is crafted with [React.js](https://react.dev/), a widely adopted JavaScript library specifically designed for creating dynamic and engaging user interfaces.
+- We leverage [Electron.js](https://www.electronjs.org/) to build a versatile desktop application that seamlessly runs on multiple operating systems, providing users with a consistent experience across platforms.
+- We utilize the [Roboto](https://fonts.google.com/specimen/Roboto)  font as the primary typeface across the entire application, ensuring a clean and modern visual aesthetic.
 
 <br><br>
 
@@ -107,41 +95,65 @@
 
 ### Prerequisites
 
-Make sure you have the following installed on your computer:
+To ensure the smooth functioning of your FarmDuino app, please make sure you have the following prerequisites installed on your computer:
 
-   - Composer
-   - npm (Node Package Manager)
-   - PHP
-   - MySQL
-   - Node.js
+- PHP: Required for running the FarmDuino app built with the Laravel framework.
+- Composer: A dependency manager for PHP used by Laravel and required for managing Laravel's dependencies.
+- Node.js: A runtime environment for executing JavaScript code outside of a web browser and required for running ReactJS components in Electron.
+- npm (Node Package Manager): A package manager for Node.js used by ReactJS components in Electron and required for managing ReactJS dependencies.
+- Arduino IDE: An integrated development environment for Arduino used for programming the Arduino microcontroller and flashing the written code to it.
+- MySQL: Database management system used by Laravel for data storage and retrieval.
+
+By having these prerequisites installed and configured correctly, you will be ready to develop and run the FarmDuino app with its various components seamlessly.
 
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [OPENAI](https://openai.com/blog/openai-api) and at [Open Weather Map](https://openweathermap.org/api)
-2. Clone the repo
+1. Obtain API Keys at [OPENAI](https://openai.com/blog/openai-api), [Open Weather Map](https://openweathermap.org/api) and [Trefle](https://trefle.io/). These keys are required for the proper functioning of the application.
+2. Clone the repository: Use the command provided below to clone the FarmDuino repository to your local machine.
    ```sh
-   git clone   https://github.com/Hussein-Turfah/FarmDuino.git
+   git clone https://github.com/Hussein-Turfah/FarmDuino.git
    ```
-3. Install NPM packages inside the `desktop` folder
+3. Install NPM Packages: Navigate to the `farmduino-desktop` folder and run npm install to install the required NPM packages.
    ```sh
    npm install
    ```
-4. Install Composer packages inside the `server` folder
+4. Install Composer Packages: Go to the `farmduino-server` folder and execute composer install to install the necessary Composer packages.
    ```sh
    composer install
    ```
-5. Migrate the database from inside the `server` folder 
+5. Install Composer Packages: Go to the `farmduino-server` folder and execute composer install to install the necessary Composer packages.
    ```sh
    php artisan migrate
    ```
-6. Enter your API in `.example.env` and rename it to `.env`
+6. Configure API Keys: Inside `farmduino-server` folder, open the `.example.env` file, enter your obtained API keys for OpenAI, Open Weather Map the latitude and longitude of your greenhouse, and Trefle, and save the file as `.env`.
    ```js
    OPENAI_API_KEY = 'ENTER YOUR API'
    WEATHER_API_KEY='ENTER YOUR API'
    TREFLE_API_KEY = 'ENTER YOUR API';
+   LATITUDE = 'ENTER YOUR LATITUDE'
+   LONGITUDE = 'ENTER YOUR LONGITUDE'
+   ```
+
+### Flashing the code to the Arduino
+
+1. Navigate to the `farmduino-arduino` folder.
+2. Open the `farmduino-arduino.ino` file using the Arduino IDE.
+3. Connect the Arduino board to your computer using a USB cable.
+4. Select the Arduino board and port from the Tools menu in the Arduino IDE.
+5. Click the Upload button in the Arduino IDE to flash the code to the Arduino.
+
+### Running the application
+
+1. Navigate to the `farmduino-server` folder.
+2. Run the following command to start the application.
+   ```sh
+   php artisan serve
+   ```
+3. Navigate to the `farmduino-desktop` folder.
+4. Run the following command to start the application.
+   ```sh
+   npm start
    ```
 
 Now, you should be able to run FarmDuino locally and explore its features 🤩.
