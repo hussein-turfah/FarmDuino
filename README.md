@@ -44,7 +44,7 @@
 
 ### Mockups
 | Login screen  | Landing screen | Sensors screen | Admin Main Screen | Account Settings Modal | 
-| ---| ---| ---| ---| ---| ---| ---|
+| ---| ---| ---| ---| ---| 
 | ![Landing](./readme/mockups/login.png) | ![fsdaf](./readme/mockups/main.png) | ![fsdaf](./readme/mockups/sensors.png) | ![fsdaf](./readme/mockups/users.png) | ![fsdaf](./readme/mockups/settings.png) |
 
 <br><br>
