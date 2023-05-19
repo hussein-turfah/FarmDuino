@@ -73,6 +73,9 @@
 | ---| ---| ---| ---|
 | ![Landing](./readme/app/admin-login.gif) | ![fsdaf](./readme/app/users.gif) | ![fsdaf](./readme/app/ticker.gif) | ![fsdaf](./readme/app/admin-settings.gif) |
 
+### Demonstration Video
+[![FarmDuino Demo](https://img.youtube.com/vi/p0kcA3lYMzY/hqdefault.jpg)](https://youtu.be/p0kcA3lYMzY)
+
 <br><br>
 
 <!-- Tech stack -->
